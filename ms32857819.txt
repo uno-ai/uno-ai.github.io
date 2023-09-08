@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "uno.ai",
+  "Id": "801e2494-9535-4b9f-8c60-e81313ec81c4"
+}
