@@ -563,6 +563,209 @@ h6 {
 }
 
 /*--------------------------------------------------------------
+# Product Hero Section
+--------------------------------------------------------------*/
+#producthero {
+  width: 100%;
+  height: 80vh;
+  background: #fff;
+  padding-top: 82px;
+}
+
+#producthero h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #3e4450;
+}
+
+#producthero h2 {
+  color: #858ea1;
+  margin: 10px 0 30px 0;
+  font-size: 24px;
+}
+
+#producthero .btn-get-started {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 30px 10px 30px;
+  border-radius: 4px;
+  transition: 0.5s;
+  color: #fff;
+  background: #16df7e;
+  box-shadow: 0 8px 28px rgba(22, 223, 126, 0.45);
+}
+
+#producthero .btn-get-started:hover {
+  background: #206bfb;
+  box-shadow: 0 8px 28px rgba(32, 107, 251, 0.45);
+}
+
+#producthero .btn-watch-video {
+  font-size: 16px;
+  display: inline-block;
+  transition: 0.5s;
+  margin-left: 25px;
+  color: #5f687b;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#producthero .btn-watch-video i {
+  color: #949cac;
+  font-size: 32px;
+  line-height: 0;
+  margin-right: 8px;
+}
+
+#producthero .btn-watch-video:hover i {
+  color: #16df7e;
+}
+
+#producthero .animated {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+@media (max-width: 991px) {
+  #producthero {
+    height: 100vh;
+  }
+
+  #producthero .animated {
+    animation: none;
+  }
+
+  #producthero .producthero-img {
+    text-align: center;
+  }
+
+  #producthero .producthero-img img {
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  #producthero {
+    height: auto;
+  }
+
+  #producthero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  #producthero h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+
+  #producthero .producthero-img img {
+    width: 60%;
+  }
+}
+
+@media (max-width: 575px) {
+  #producthero .producthero-img img {
+    width: 80%;
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/*--------------------------------------------------------------
+# Why Us Section
+--------------------------------------------------------------*/
+.why-us .why-box {
+  padding: 30px;
+  background: #021C35;
+  color: #fff;
+}
+
+.why-us .why-box h3 {
+  font-weight: 700;
+  font-size: 34px;
+  margin-bottom: 30px;
+}
+
+.why-us .why-box p {
+  margin-bottom: 30px;
+}
+
+.why-us .why-box .more-btn {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 6px 30px 8px 30px;
+  color: #fff;
+  border-radius: 5px;
+  transition: all ease-in-out 0.4s;
+}
+
+.why-us .why-box .more-btn i {
+  font-size: 14px;
+}
+
+.why-us .why-box .more-btn:hover {
+  color: #021C35;
+  background: #fff;
+}
+
+.why-us .icon-box {
+  text-align: center;
+  background: #fff;
+  padding: 40px 30px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(55, 55, 63, 0.1);
+  transition: 0.3s;
+}
+
+.why-us .icon-box i {
+  color: #22B573;
+  margin-bottom: 30px;
+  font-size: 32px;
+  margin-bottom: 30px;
+  background: rgba(206, 18, 18, 0.1);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+}
+
+.why-us .icon-box h4 {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0 0 30px 0;
+  font-family: var(--font-secondary);
+}
+
+.why-us .icon-box p {
+  font-size: 15px;
+  color: #6c757d;
+}
+
+@media (min-width: 1200px) {
+  .why-us .icon-box:hover {
+    transform: scale(1.1);
+  }
+}
+
+/*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
 section {
@@ -1495,13 +1698,13 @@ section {
 .breadcrumbs {
   padding: 15px 0;
   background: #f0f4f8;
-  min-height: 40px;
+  min-height: 30px;
   margin-top: 78px;
 }
 
 .breadcrumbs h2 {
-  font-size: 28px;
-  font-weight: 400;
+  font-size: 22px;
+  font-weight: 200;
 }
 
 .breadcrumbs ol {
