@@ -514,6 +514,18 @@ h6 {
   font-size: 24px;
 }
 
+#hero .highlighted {
+  color: #F7B50A;
+  margin-bottom: 50px;
+  font-size: 24px;
+}
+
+#hero .highlighted-large {
+  color: #fd3800;
+  margin-bottom: 50px;
+  font-size: 28px;
+}
+
 #hero .btn-get-started {
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
@@ -599,6 +611,12 @@ h6 {
   font-size: 24px;
 }
 
+#producthero .highlighted-large {
+  color: #858ea1;
+  margin-bottom: 30px;
+  font-size: 26px;
+}
+
 #producthero .btn-get-started {
   font-family: "Raleway", sans-serif;
   font-weight: 500;
@@ -609,7 +627,7 @@ h6 {
   border-radius: 4px;
   transition: 0.5s;
   color: #fff;
-  background: #16df7e;
+  background: #ff4a17;
   box-shadow: 0 8px 28px rgba(22, 223, 126, 0.45);
 }
 
