@@ -820,6 +820,29 @@ h6 {
 }
 
 /*--------------------------------------------------------------
+# Tab Pane (default overrride for more-btn)
+--------------------------------------------------------------*/
+
+.tab-pane .more-btn {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 30px 10px 30px;
+  border-radius: 4px;
+  transition: 0.5s;
+  color: #fff;
+  background: #ff4a17;
+}
+
+
+.tab-pane .more-btn:hover {
+  background: #206bfb;
+  box-shadow: 0 8px 28px rgba(32, 107, 251, 0.45);
+}
+
+/*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
 section {
@@ -1179,9 +1202,9 @@ section {
 }
 
 .features .nav-link.active {
-  background: #ff4a17;
+  background: #021C35;
   color: #fff;
-  border-color: #ff4a17;
+  border-color: #021C35;
 }
 
 @media (max-width: 768px) {
