@@ -827,6 +827,16 @@ h6 {
   padding: 40px 40px;
 }
 
+.iprc-video {
+  display: flex;
+  justify-content: center;
+}
+
+iframe {
+  aspect-ratio: 16 / 9;
+  width: 100% !important;
+}
+
 
 /*--------------------------------------------------------------
 # Tab Pane (default overrride for more-btn)
