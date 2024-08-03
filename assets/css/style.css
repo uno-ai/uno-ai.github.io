@@ -526,6 +526,12 @@ h6 {
   font-size: 28px;
 }
 
+#hero .highlighted-extra-large {
+  color: #fd3800;
+  margin-bottom: 50px;
+  font-size: 48px;
+}
+
 #hero .btn-get-started {
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
