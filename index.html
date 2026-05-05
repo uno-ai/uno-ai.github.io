@@ -1,439 +1,1911 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Uno.ai - World's Most Sophisticated AI Agents Native GRC Platform</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uno.ai - World's Most Sophisticated AI Agents Native GRC Platform</title>
+<meta name="description" content="The world's most sophisticated AI agents native GRC platform. 40x speed, 20x scale for governance, risk, compliance, and resilience.">
+<meta name="keywords" content="GRC, AI agents, compliance, risk management, governance, resilience, SOC 2, ISO 27001">
 
-  <!-- Favicons -->
-  <!-- <link href="assets/img/favicon.png" rel="icon"> -->
-  <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
-  <link rel="icon" type="image/svg+xml" href="assets/img/uno/favicon.svg">
-  <link rel="icon" type="image/png" href="assets/img/uno/favicon.png">
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="assets/img/uno/favicon.svg">
+<link rel="icon" type="image/png" href="assets/img/uno/favicon.png">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="assets/css/enhancements.css">
+<style>
+/* ─────────────────────────────────────────────
+   DESIGN TOKENS
+───────────────────────────────────────────── */
+:root {
+  /* Surfaces */
+  --ink:         #0b0b0b;
+  --ink-2:       #141414;
+  --ink-3:       #1c1c1c;
+  --paper:       #faf9f7;
+  --paper-2:     #f3f1ed;
+  --white:       #ffffff;
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  /* Dark-surface text */
+  --on-dark:     #ffffff;
+  --on-dark-md:  rgba(255,255,255,0.75);
+  --on-dark-dim: rgba(255,255,255,0.48);
+  --on-dark-xdim:rgba(255,255,255,0.28);
+  --rule-dark:   rgba(255,255,255,0.12);
 
-  <!-- =======================================================
-  * Template Name: Moderna
-  * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  /* Light-surface text */
+  --on-light:    #0b0b0b;
+  --on-light-md: rgba(11,11,11,0.68);
+  --on-light-dim:rgba(11,11,11,0.48);
+  --rule-light:  rgba(11,11,11,0.12);
+
+  /* Accents */
+  --sage:        #4e7d71;
+  --sage-lt:     #d5e8e4;
+  --amber:       #c17f3a;
+  --amber-lt:    #f3e4cf;
+  --teal:        #00b8ad;
+  --unored:      #ff0c0a;
+  --unored-md:   #b00808;
+  --blue:        #3b82f6;
+  --blue-dim:    rgba(59,130,246,0.12);
+  --violet:      #7c3aed;
+  --violet-dim:  rgba(124,58,237,0.10);
+
+  /* Shared */
+  --radius:      4px;
+  --radius-lg:   8px;
+}
+
+/* ─────────────────────────────────────────────
+   RESET
+───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  background: var(--white);
+  color: var(--on-light);
+}
+
+img { max-width: 100%; height: auto; }
+
+/* ─────────────────────────────────────────────
+   TYPOGRAPHY
+───────────────────────────────────────────── */
+.serif    { font-family: 'Instrument Serif', serif; font-weight: 400; }
+.serif-i  { font-family: 'Instrument Serif', serif; font-weight: 400; font-style: italic; }
+.mono     { font-family: 'DM Mono', monospace; font-size: 11.5px; letter-spacing: 0.13em; text-transform: uppercase; }
+
+/* ─────────────────────────────────────────────
+   SURFACE SECTIONS
+───────────────────────────────────────────── */
+.surface-dark  { background: var(--ink);    color: var(--on-dark); }
+.surface-dark2 { background: var(--ink-2);  color: var(--on-dark); }
+.surface-dark3 { background: var(--ink-3);  color: var(--on-dark); }
+.surface-paper { background: var(--paper);  color: var(--on-light); }
+.surface-paper2{ background: var(--paper-2);color: var(--on-light); }
+.surface-white { background: var(--white);  color: var(--on-light); }
+
+/* ─────────────────────────────────────────────
+   ANNOUNCEMENT STRIP
+───────────────────────────────────────────── */
+.strip {
+  position: relative;
+  padding: 12px 20px;
+  text-align: center;
+  overflow: hidden;
+  background: var(--ink);
+}
+.strip::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg,
+      rgba(0,184,173,0.15) 0%,
+      rgba(78,125,113,0.08) 25%,
+      rgba(124,58,237,0.1) 50%,
+      rgba(59,130,246,0.1) 75%,
+      rgba(0,184,173,0.15) 100%
+    );
+  background-size: 200% 100%;
+  animation: strip-shimmer 8s ease-in-out infinite;
+}
+@keyframes strip-shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+.strip::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--teal), transparent);
+  opacity: 0.4;
+}
+.strip a {
+  position: relative; z-index: 1;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 400; letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.9); text-decoration: none;
+  display: inline-flex; align-items: center; gap: 14px;
+  transition: color 0.2s;
+}
+.strip a:hover { color: #fff; }
+.strip-badge {
+  background: linear-gradient(135deg, var(--teal), #00d4c8);
+  color: var(--ink);
+  width: 26px; height: 26px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.strip-cta {
+  color: var(--teal); font-weight: 500;
+  display: inline-flex; align-items: center; gap: 4px;
+  transition: gap 0.2s;
+}
+.strip a:hover .strip-cta { gap: 7px; }
+.strip-sep { display: none; }
+.strip-icon { display: none; }
+
+/* ─────────────────────────────────────────────
+   NAV
+───────────────────────────────────────────── */
+.main-nav {
+  position: sticky; top: 0; z-index: 200;
+  height: 62px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 52px;
+  background: rgba(255,255,255,0.92);
+  border-bottom: 1px solid var(--rule-light);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+.nav-logo {
+  text-decoration: none;
+  display: flex; align-items: center; gap: 8px;
+}
+.nav-logo img { height: 36px; width: auto; }
+
+.nav-links { display: flex; align-items: center; gap: 0; }
+.nav-links > .nav-item { position: relative; }
+.nav-links > .nav-item > a {
+  font-size: 14.5px; color: var(--on-light-md);
+  text-decoration: none; padding: 0 15px; transition: color 0.18s;
+  display: flex; align-items: center; gap: 4px;
+  height: 62px; line-height: 62px;
+}
+.nav-links > .nav-item > a:hover,
+.nav-links > .nav-item:hover > a { color: var(--on-light); }
+.nav-links > .nav-item > a .nav-arrow { font-size: 8px; transition: transform 0.2s; }
+.nav-links > .nav-item:hover > a .nav-arrow { transform: rotate(180deg); }
+
+/* Dropdown */
+.nav-dropdown {
+  position: absolute; top: 100%; left: 0;
+  background: var(--white);
+  border: 1px solid var(--rule-light);
+  border-radius: var(--radius-lg);
+  padding: 8px 0;
+  min-width: 220px;
+  opacity: 0; visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.18s, visibility 0.18s, transform 0.18s;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+.nav-links > .nav-item:hover > .nav-dropdown {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.nav-dropdown-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 12px 18px; text-decoration: none; transition: background 0.15s;
+}
+.nav-dropdown-item:hover { background: var(--paper-2); }
+.dropdown-icon {
+  width: 36px; height: 36px; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.dropdown-icon svg { width: 18px; height: 18px; stroke-width: 1.75; }
+.dropdown-icon.i-teal { background: rgba(0,184,173,0.1); }
+.dropdown-icon.i-teal svg { stroke: var(--teal); }
+.dropdown-icon.i-sage { background: rgba(78,125,113,0.1); }
+.dropdown-icon.i-sage svg { stroke: var(--sage); }
+.dropdown-icon.i-amber { background: rgba(193,127,58,0.1); }
+.dropdown-icon.i-amber svg { stroke: var(--amber); }
+.dropdown-icon.i-violet { background: rgba(124,58,237,0.1); }
+.dropdown-icon.i-violet svg { stroke: var(--violet); }
+.dropdown-icon.i-ink { background: rgba(11,11,11,0.08); }
+.dropdown-icon.i-ink svg { stroke: var(--ink); }
+.dropdown-title { font-size: 14px; font-weight: 500; color: var(--on-light); margin-bottom: 2px; }
+.dropdown-desc { font-size: 12px; font-weight: 300; color: var(--on-light-md); line-height: 1.4; }
+/* Nested dropdown */
+.nav-dropdown-item.has-submenu { position: relative; cursor: pointer; }
+.nav-dropdown-item.has-submenu::after {
+  content: ''; position: absolute; right: 18px; top: 50%; transform: translateY(-50%);
+  border: 4px solid transparent; border-left-color: var(--on-light-md); transition: border-color 0.2s;
+}
+.nav-dropdown-item.has-submenu:hover::after { border-left-color: var(--on-light); }
+.nav-sub-dropdown {
+  position: absolute; top: -8px; left: 100%;
+  background: var(--white); border: 1px solid var(--rule-light);
+  border-radius: var(--radius-lg); padding: 8px 0; min-width: 220px;
+  opacity: 0; visibility: hidden; transform: translateX(6px);
+  transition: opacity 0.22s, visibility 0.22s, transform 0.22s;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12); margin-left: -4px;
+}
+.nav-dropdown-item.has-submenu:hover > .nav-sub-dropdown {
+  opacity: 1; visibility: visible; transform: translateX(0);
+}
+.submenu-item { display: block; padding: 10px 18px; text-decoration: none; transition: background 0.15s; }
+.submenu-item:hover { background: var(--paper-2); }
+.submenu-title { font-size: 13.5px; font-weight: 500; color: var(--on-light); margin-bottom: 2px; }
+.submenu-desc { font-size: 11px; font-weight: 300; color: var(--on-light-md); line-height: 1.4; }
+
+.nav-right { display: flex; align-items: center; gap: 14px; }
+.nav-right > a.nav-sign-in {
+  font-size: 14.5px; color: var(--on-light-md); text-decoration: none; transition: color 0.18s;
+}
+.nav-right > a.nav-sign-in:hover { color: var(--on-light); }
+.nav-cta {
+  font-size: 14px; font-weight: 500;
+  background: var(--ink); color: var(--on-dark);
+  padding: 8px 18px; border-radius: var(--radius);
+  text-decoration: none; transition: opacity 0.18s;
+}
+.nav-cta:hover { opacity: 0.84; }
+
+/* Mobile toggle */
+.mobile-nav-toggle {
+  display: none; cursor: pointer; font-size: 22px;
+  color: var(--on-light); background: none; border: none;
+}
+
+/* ─────────────────────────────────────────────
+   HERO
+───────────────────────────────────────────── */
+.hero {
+  background: var(--white);
+  padding: 120px 52px 100px;
+  max-width: 1360px; margin: 0 auto;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: 40px; right: -60px;
+  width: 500px; height: 500px;
+  background: radial-gradient(ellipse, rgba(78,125,113,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(ellipse, rgba(193,127,58,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-kicker {
+  font-family: 'DM Mono', monospace; font-size: 12px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 44px;
+  display: flex; align-items: center; gap: 12px;
+  position: relative; z-index: 1;
+}
+.hero-kicker::before {
+  content: ''; width: 28px; height: 1.5px;
+  background: linear-gradient(90deg, var(--teal), var(--sage));
+  border-radius: 2px;
+}
+.hero h1 {
+  font-family: 'Instrument Serif', serif; font-weight: 400;
+  font-size: clamp(64px, 9vw, 136px);
+  line-height: 0.93; letter-spacing: -0.03em;
+  color: var(--on-light);
+  margin-bottom: 0;
+  position: relative; z-index: 1;
+}
+.hero h1 .cycling-word {
+  display: inline-block; min-width: 3ch;
+  font-style: italic; color: var(--unored-md);
+  transition: opacity 0.22s, transform 0.22s;
+}
+.hero-bracket-l,
+.hero-bracket-r { color: var(--sage); opacity: 0.5; }
+
+.hero-dimline {
+  font-family: 'Instrument Serif', serif; font-style: italic;
+  color: var(--on-light-md); display: block;
+}
+
+.hero-sub {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 48px; align-items: start;
+  margin-top: 64px; padding-top: 48px;
+  border-top: 1px solid var(--rule-light);
+  position: relative; z-index: 1;
+}
+.hero-desc {
+  font-size: 19px; font-weight: 300;
+  color: var(--on-light-md); line-height: 1.8; max-width: 460px;
+}
+.hero-actions {
+  display: flex; flex-direction: column; gap: 20px; align-items: flex-start;
+}
+.hero-btns { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+
+.btn-solid-ink {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--ink); color: var(--on-dark);
+  font-size: 14.5px; font-weight: 500;
+  padding: 12px 24px; border-radius: var(--radius);
+  text-decoration: none; transition: opacity 0.18s, transform 0.18s;
+}
+.btn-solid-ink:hover { opacity: 0.86; transform: translateY(-1px); }
+
+.btn-ghost-light {
+  display: inline-flex; align-items: center; gap: 7px;
+  color: var(--on-light-md); font-size: 14.5px; font-weight: 400;
+  text-decoration: none; padding: 12px 0;
+  border-bottom: 1px solid var(--rule-light);
+  transition: color 0.18s, border-color 0.18s;
+}
+.btn-ghost-light:hover { color: var(--on-light); border-bottom-color: var(--on-light-md); }
+
+.btn-solid-white {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--on-dark); color: var(--ink);
+  font-size: 14.5px; font-weight: 500;
+  padding: 12px 24px; border-radius: var(--radius);
+  text-decoration: none; transition: opacity 0.18s, transform 0.18s;
+}
+.btn-solid-white:hover { opacity: 0.8; transform: translateY(-1px); }
+
+.btn-ghost-dark {
+  display: inline-flex; align-items: center; gap: 7px;
+  color: var(--on-dark-md); font-size: 14.5px;
+  text-decoration: none; padding: 12px 0;
+  border-bottom: 1px solid var(--rule-dark);
+  transition: color 0.18s, border-color 0.18s;
+}
+.btn-ghost-dark:hover { color: var(--on-dark); border-bottom-color: var(--on-dark-md); }
+
+.hero-stats { display: flex; gap: 44px; flex-wrap: wrap; }
+.hs-val {
+  font-family: 'Instrument Serif', serif; font-size: 36px;
+  color: var(--on-light); line-height: 1; letter-spacing: -0.02em; display: block;
+}
+.hs-val .a { color: var(--sage); }
+.hs-lbl {
+  font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--on-light-dim); margin-top: 5px; display: block;
+}
+
+/* ─────────────────────────────────────────────
+   FEATURED SERVICES (quick-access cards)
+───────────────────────────────────────────── */
+.services-section {
+  padding: 0 52px 80px;
+  max-width: 1360px; margin: 0 auto;
+}
+.services-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+}
+.service-card {
+  padding: 36px 28px;
+  border: 1px solid var(--rule-light);
+  border-right: none;
+  border-top: 3px solid transparent;
+  position: relative;
+  text-decoration: none;
+  transition: background 0.2s, border-top-color 0.25s;
+}
+.service-card:last-child { border-right: 1px solid var(--rule-light); }
+.service-card:hover { background: var(--paper); }
+.service-card:nth-child(1):hover { border-top-color: #38BDF8; }
+.service-card:nth-child(2):hover { border-top-color: #FB923C; }
+.service-card:nth-child(3):hover { border-top-color: #4ADE80; }
+.service-card:nth-child(4):hover { border-top-color: var(--violet); }
+
+.service-icon {
+  width: 44px; height: 44px;
+  border-radius: var(--radius-lg);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; margin-bottom: 20px;
+}
+.service-icon.cyan    { background: rgba(56,189,248,0.12); color: #38BDF8; }
+.service-icon.orange  { background: rgba(251,146,60,0.12); color: #FB923C; }
+.service-icon.teal    { background: rgba(74,222,128,0.12); color: #4ADE80; }
+.service-icon.violet  { background: var(--violet-dim); color: var(--violet); }
+.service-icon svg { width: 22px; height: 22px; stroke-width: 1.75; }
+.service-icon.cyan svg { stroke: #38BDF8; }
+.service-icon.orange svg { stroke: #FB923C; }
+.service-icon.teal svg { stroke: #4ADE80; }
+.service-icon.violet svg { stroke: var(--violet); }
+
+.check-icon svg { width: 12px; height: 12px; stroke-width: 2.5; }
+.footer-social svg { width: 16px; height: 16px; stroke-width: 1.75; }
+
+.service-card h3 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 22px; font-weight: 400; color: var(--on-light);
+  letter-spacing: -0.01em; margin-bottom: 8px;
+}
+.service-card p {
+  font-size: 14.5px; color: var(--on-light-md); line-height: 1.65; font-weight: 300;
+}
+.service-card::after {
+  content: '→'; position: absolute; top: 36px; right: 24px;
+  font-size: 17px; color: var(--on-light-dim);
+  transition: color 0.18s, transform 0.18s;
+}
+.service-card:nth-child(1):hover::after { color: #38BDF8; transform: translateX(3px); }
+.service-card:nth-child(2):hover::after { color: #FB923C; transform: translateX(3px); }
+.service-card:nth-child(3):hover::after { color: #4ADE80; transform: translateX(3px); }
+.service-card:nth-child(4):hover::after { color: var(--violet); transform: translateX(3px); }
+
+/* ─────────────────────────────────────────────
+   MARQUEE
+───────────────────────────────────────────── */
+.marquee-wrap {
+  border-top: 1px solid rgba(0,184,173,0.15);
+  border-bottom: 1px solid rgba(0,184,173,0.15);
+  padding: 18px 0; overflow: hidden;
+}
+.marquee-track {
+  display: flex; white-space: nowrap;
+  animation: marquee 28s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.m-item {
+  font-family: 'DM Mono', monospace; font-size: 11px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.72); padding: 0 36px; flex-shrink: 0;
+  display: flex; align-items: center; gap: 36px;
+}
+.m-item::after { content: '·'; font-size: 17px; color: var(--teal); opacity: 0.6; }
+
+/* ─────────────────────────────────────────────
+   ABOUT - image + text (light)
+───────────────────────────────────────────── */
+.about-section {
+  padding: 100px 52px;
+  max-width: 1360px; margin: 0 auto;
+}
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 72px; align-items: center;
+}
+.about-img {
+  border-radius: var(--radius-lg); overflow: hidden;
+  position: relative;
+  border: 1px solid var(--rule-light);
+  padding: 12px;
+  background: var(--white);
+}
+.about-img::before {
+  content: ''; position: absolute; top: -1px; left: 40px; right: 40px;
+  height: 3px; background: linear-gradient(90deg, var(--teal), var(--sage), var(--amber));
+  border-radius: 0 0 3px 3px;
+}
+.about-img img { display: block; width: 100%; border-radius: var(--radius); }
+.about-content h2 {
+  font-family: 'Instrument Serif', serif; font-size: clamp(36px, 4vw, 52px);
+  font-weight: 400; letter-spacing: -0.02em; line-height: 1.05;
+  color: var(--on-light); margin-bottom: 24px;
+}
+.about-content h2 .dim { font-style: italic; color: var(--on-light-md); }
+.about-content .about-lead {
+  font-size: 17px; font-weight: 300; color: var(--on-light-md);
+  line-height: 1.8; margin-bottom: 28px; font-style: italic;
+}
+.about-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
+.about-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 15px; color: var(--on-light-md); line-height: 1.65;
+}
+.about-list li .check-icon {
+  flex-shrink: 0; width: 22px; height: 22px;
+  border-radius: 50%; background: rgba(78,125,113,0.12);
+  color: var(--sage); display: flex; align-items: center; justify-content: center;
+  font-size: 12px; margin-top: 2px;
+}
+.about-list li:nth-child(2) .check-icon { background: rgba(0,184,173,0.1); color: var(--teal); }
+.about-list li:nth-child(3) .check-icon { background: rgba(193,127,58,0.1); color: var(--amber); }
+.about-text {
+  font-size: 15px; color: var(--on-light-md); line-height: 1.75;
+}
+
+/* ─────────────────────────────────────────────
+   PLATFORM SOLUTIONS (dark)
+───────────────────────────────────────────── */
+.platform-section {
+  padding: 100px 52px;
+  max-width: 1360px; margin: 0 auto;
+}
+.section-header-2col {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; margin-bottom: 72px; align-items: end;
+}
+.section-h2 {
+  font-family: 'Instrument Serif', serif; font-weight: 400;
+  font-size: clamp(44px, 5.5vw, 76px);
+  line-height: 0.96; letter-spacing: -0.025em;
+}
+.section-h2 .dim { font-style: italic; color: var(--on-dark-md); }
+.section-h2.on-light .dim { color: var(--on-light-md); }
+
+.section-right-col {
+  padding-bottom: 6px;
+  display: flex; flex-direction: column; gap: 24px; justify-content: flex-end;
+}
+.section-right-col p {
+  font-size: 17px; font-weight: 300; color: var(--on-dark-md); line-height: 1.8;
+}
+.section-right-col.on-light p { color: var(--on-light-md); }
+
+.platform-list { display: flex; flex-direction: column; }
+.platform-row {
+  display: grid; grid-template-columns: 52px 1fr 1.2fr 100px;
+  gap: 40px; align-items: start;
+  padding: 34px 0;
+  border-top: 1px solid var(--rule-dark);
+  position: relative; cursor: default;
+  transition: background 0.18s;
+  text-decoration: none; color: inherit;
+}
+.platform-row:last-child { border-bottom: 1px solid var(--rule-dark); }
+.platform-row::before {
+  content: ''; position: absolute; inset: 0 -52px;
+  background: rgba(255,255,255,0.03); opacity: 0; transition: opacity 0.18s;
+}
+.platform-row:hover::before { opacity: 1; }
+
+.pr-num {
+  font-family: 'DM Mono', monospace; font-size: 11.5px; letter-spacing: 0.08em;
+  color: var(--teal); padding-top: 4px; position: relative; z-index: 1;
+}
+.pr-title {
+  font-family: 'Instrument Serif', serif; font-size: 26px;
+  font-weight: 400; color: var(--on-dark); letter-spacing: -0.015em;
+  line-height: 1.1; position: relative; z-index: 1;
+}
+.pr-desc {
+  font-size: 14.5px; color: var(--on-dark-md); line-height: 1.7; font-weight: 300;
+  position: relative; z-index: 1;
+}
+.pr-tag {
+  font-family: 'DM Mono', monospace; font-size: 11px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 5px 10px; border-radius: 2px;
+  position: relative; z-index: 1; align-self: flex-start; margin-top: 4px;
+  white-space: nowrap;
+  color: var(--teal); border: 1px solid rgba(0,184,173,0.2); background: rgba(0,184,173,0.06);
+}
+
+/* ─────────────────────────────────────────────
+   FEATURES - alternating image + text
+───────────────────────────────────────────── */
+.features-section {
+  padding: 100px 52px;
+  max-width: 1360px; margin: 0 auto;
+}
+.features-header {
+  text-align: center; margin-bottom: 80px;
+}
+.features-header h2 {
+  font-family: 'Instrument Serif', serif; font-size: clamp(44px, 5.5vw, 72px);
+  font-weight: 400; letter-spacing: -0.025em; line-height: 0.96;
+  color: var(--on-light); margin-bottom: 18px;
+}
+.features-header h2 .dim { font-style: italic; color: var(--on-light-md); }
+.features-header p {
+  font-size: 17px; font-weight: 300; color: var(--on-light-md); line-height: 1.7;
+  max-width: 580px; margin: 0 auto;
+}
+
+.feature-row {
+  display: grid; grid-template-columns: 1.1fr 0.9fr;
+  gap: 72px; align-items: center;
+  padding: 56px 0;
+  border-top: 1px solid var(--rule-light);
+}
+.feature-row:last-child { border-bottom: 1px solid var(--rule-light); }
+.feature-row.reverse { direction: rtl; }
+.feature-row.reverse > * { direction: ltr; }
+
+.feature-img {
+  border-radius: var(--radius-lg); overflow: hidden;
+  background: var(--paper);
+  padding: 16px;
+  position: relative;
+}
+.feature-img img { display: block; width: 100%; border-radius: var(--radius); }
+
+.feature-content h3 {
+  font-family: 'Instrument Serif', serif; font-size: 28px;
+  font-weight: 400; color: var(--on-light); letter-spacing: -0.015em;
+  margin-bottom: 16px; line-height: 1.15;
+}
+.feature-row:nth-child(1) .feature-content h3 { color: var(--sage); }
+.feature-row:nth-child(3) .feature-content h3 { color: var(--sage); }
+.feature-content .feature-lead {
+  font-size: 15px; font-weight: 300; color: var(--on-light-md);
+  line-height: 1.75; margin-bottom: 20px; font-style: italic;
+}
+.feature-content .feature-text {
+  font-size: 15px; color: var(--on-light-md); line-height: 1.75;
+}
+.feature-list {
+  list-style: none; display: flex; flex-direction: column; gap: 12px;
+}
+.feature-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 15px; color: var(--on-light-md); line-height: 1.65;
+}
+.feature-list li .check-icon {
+  flex-shrink: 0; width: 20px; height: 20px;
+  border-radius: 50%; background: rgba(78,125,113,0.12);
+  color: var(--sage); display: flex; align-items: center; justify-content: center;
+  font-size: 11px; margin-top: 2px;
+}
+.feature-list li:nth-child(2) .check-icon { background: rgba(0,184,173,0.1); color: var(--teal); }
+.feature-list li:nth-child(3) .check-icon { background: rgba(59,130,246,0.1); color: var(--blue); }
+
+/* ─────────────────────────────────────────────
+   NUMBERS
+───────────────────────────────────────────── */
+.numbers-section {
+  padding: 96px 52px;
+  border-top: 1px solid var(--rule-light);
+  border-bottom: 1px solid var(--rule-light);
+}
+.numbers-inner {
+  max-width: 1360px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 0;
+}
+.num-block {
+  padding: 0 40px;
+  border-right: 1px solid var(--rule-light);
+}
+.num-block:first-child { padding-left: 0; }
+.num-block:last-child  { border-right: none; padding-right: 0; }
+
+.num-val {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(52px, 6.5vw, 92px);
+  font-weight: 400; color: var(--on-light);
+  line-height: 1; letter-spacing: -0.03em; display: block; margin-bottom: 14px;
+}
+.num-val .a  { color: var(--sage); }
+.num-val .sa { color: var(--amber); }
+
+.num-label {
+  font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--sage); display: block; margin-bottom: 10px;
+}
+.num-desc { font-size: 14.5px; font-weight: 300; color: var(--on-light-md); line-height: 1.65; }
+
+/* ─────────────────────────────────────────────
+   ARCHITECTURE
+───────────────────────────────────────────── */
+.arch-section {
+  padding: 100px 52px; max-width: 1360px; margin: 0 auto;
+}
+.arch-intro {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-bottom: 88px;
+}
+.arch-intro h2 {
+  font-family: 'Instrument Serif', serif; font-size: clamp(44px,5.5vw,72px);
+  font-weight: 400; letter-spacing: -0.025em; line-height: 0.96; color: var(--on-dark);
+}
+.arch-intro h2 .dim { font-style: italic; color: var(--on-dark-md); }
+.arch-intro p { font-size: 17px; font-weight: 300; color: var(--on-dark-md); line-height: 1.85; padding-top: 8px; }
+
+.arch-cols { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; }
+.arch-col {
+  padding: 0 36px;
+  border-right: 1px solid var(--rule-dark);
+}
+.arch-col:first-child { padding-left: 0; }
+.arch-col:last-child  { border-right: none; padding-right: 0; }
+
+.arch-col-num {
+  font-family: 'DM Mono', monospace; font-size: 11px; color: var(--on-dark-dim);
+  letter-spacing: 0.1em; margin-bottom: 28px; display: block;
+}
+.arch-col h3 {
+  font-family: 'Instrument Serif', serif; font-size: 21px; font-weight: 400;
+  color: var(--on-dark); line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 14px;
+}
+.arch-col p { font-size: 14px; color: var(--on-dark-md); line-height: 1.75; font-weight: 300; }
+
+.arch-col:nth-child(1)::before { content:''; display:block; width:24px; height:2px; background:var(--teal); border-radius:2px; margin-bottom:28px; }
+.arch-col:nth-child(2)::before { content:''; display:block; width:24px; height:2px; background:var(--amber); border-radius:2px; margin-bottom:28px; }
+.arch-col:nth-child(3)::before { content:''; display:block; width:24px; height:2px; background:var(--blue); border-radius:2px; margin-bottom:28px; }
+.arch-col:nth-child(4)::before { content:''; display:block; width:24px; height:2px; background:var(--violet); border-radius:2px; margin-bottom:28px; }
+
+/* ─────────────────────────────────────────────
+   FRAMEWORKS
+───────────────────────────────────────────── */
+.fw-section {
+  padding: 100px 52px; max-width: 1360px; margin: 0 auto;
+}
+.fw-top {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-bottom: 72px;
+}
+.fw-top h2 {
+  font-family: 'Instrument Serif', serif; font-size: clamp(44px,5.5vw,68px);
+  font-weight: 400; letter-spacing: -0.025em; line-height: 0.96; color: var(--on-dark);
+}
+.fw-top h2 .dim { font-style: italic; color: var(--on-dark-md); }
+.fw-top p { font-size: 17px; font-weight: 300; color: var(--on-dark-md); line-height: 1.8; padding-top: 8px; }
+
+.fw-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; }
+.fw-col {
+  padding: 0 40px;
+  border-right: 1px solid var(--rule-dark);
+}
+.fw-col:first-child { padding-left: 0; }
+.fw-col:last-child  { border-right: none; padding-right: 0; }
+
+.fw-col-label {
+  font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; display: block;
+  margin-bottom: 24px; padding-bottom: 14px;
+  border-bottom: 1px solid var(--rule-dark);
+}
+.fw-col:nth-child(1) .fw-col-label { color: var(--teal); }
+.fw-col:nth-child(2) .fw-col-label { color: var(--amber); }
+.fw-col:nth-child(3) .fw-col-label { color: var(--blue); }
+
+.fw-tag {
+  font-size: 14.5px; font-weight: 300; color: var(--on-dark-md);
+  padding: 9px 0; border-bottom: 1px solid var(--rule-dark);
+  display: block; transition: color 0.14s; cursor: default;
+}
+.fw-tag:last-child { border-bottom: none; }
+.fw-tag:hover { color: var(--on-dark); }
+
+/* ─────────────────────────────────────────────
+   INDUSTRIES
+───────────────────────────────────────────── */
+.ind-section {
+  border-top: 1px solid var(--rule-light);
+  padding: 100px 0;
+}
+.ind-header {
+  padding: 0 52px; margin-bottom: 56px;
+}
+.ind-header h2 {
+  font-family: 'Instrument Serif', serif; font-size: clamp(44px,5.5vw,76px);
+  font-weight: 400; letter-spacing: -0.025em; line-height: 0.96; color: var(--on-light);
+}
+.ind-header h2 .dim { font-style: italic; color: var(--on-light-md); }
+
+.ind-scroll { display: flex; padding: 0 52px; }
+.ind-card {
+  flex: 1; min-width: 260px;
+  padding: 44px 36px;
+  border: 1px solid var(--rule-light);
+  border-right: none; position: relative;
+  transition: background 0.18s;
+  text-decoration: none; color: inherit;
+}
+.ind-card:last-child { border-right: 1px solid var(--rule-light); }
+.ind-card:hover { background: var(--paper-2); }
+.ind-card::after {
+  content: '↗'; position: absolute; top: 36px; right: 28px;
+  font-size: 17px; color: var(--on-light-dim);
+  transition: color 0.18s, transform 0.18s;
+}
+.ind-card:hover::after { color: var(--sage); transform: translate(2px,-2px); }
+.ind-card:nth-child(1):hover { border-top: 2px solid var(--teal); }
+.ind-card:nth-child(2):hover { border-top: 2px solid var(--amber); }
+.ind-card:nth-child(3):hover { border-top: 2px solid var(--blue); }
+.ind-card:nth-child(4):hover { border-top: 2px solid var(--violet); }
+
+.ind-num { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--sage); letter-spacing: 0.1em; margin-bottom: 36px; display: block; }
+.ind-card h3 { font-family: 'Instrument Serif', serif; font-size: 24px; font-weight: 400; color: var(--on-light); letter-spacing: -0.015em; margin-bottom: 12px; line-height: 1.1; }
+.ind-card p { font-size: 14px; color: var(--on-light-md); line-height: 1.7; font-weight: 300; }
+
+/* ─────────────────────────────────────────────
+   TESTIMONIALS
+───────────────────────────────────────────── */
+.quote-section {
+  padding: 120px 52px; max-width: 1360px; margin: 0 auto;
+}
+.quote-kicker {
+  font-family: 'DM Mono', monospace; font-size: 11.5px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 44px; display: block;
+}
+.quote-section blockquote {
+  font-family: 'Instrument Serif', serif; font-size: clamp(24px,3.5vw,48px);
+  font-weight: 400; font-style: italic;
+  color: var(--on-dark-md); line-height: 1.28; letter-spacing: -0.02em;
+  max-width: 880px; margin-bottom: 32px;
+}
+.quote-section blockquote strong { color: var(--on-dark); font-style: normal; }
+.quote-attr { display: flex; align-items: center; gap: 16px; }
+.q-rule { width: 32px; height: 1px; background: var(--rule-dark); }
+.q-who { font-family: 'DM Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--on-dark-dim); }
+
+.quotes-row {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 0;
+  border-top: 1px solid var(--rule-dark); margin-top: 80px;
+}
+.q-item {
+  padding: 44px 44px 44px 0; border-right: 1px solid var(--rule-dark);
+}
+.q-item:nth-child(2) { padding-left: 44px; }
+.q-item:last-child { border-right: none; padding-right: 0; padding-left: 44px; }
+
+.q-stars { display: flex; gap: 3px; font-size: 14px; color: var(--amber); margin-bottom: 18px; }
+.q-text { font-family: 'Instrument Serif', serif; font-size: 17.5px; font-style: italic; color: var(--on-dark-md); line-height: 1.55; letter-spacing: -0.01em; margin-bottom: 22px; }
+.q-who-sm { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--on-dark-dim); }
+
+/* ─────────────────────────────────────────────
+   CTA
+───────────────────────────────────────────── */
+.cta-section {
+  border-top: 1px solid var(--rule-light);
+  padding: 140px 52px; text-align: center;
+  position: relative; overflow: hidden;
+  background: var(--white);
+}
+.cta-section::before {
+  content: ''; position: absolute; top:50%; left:50%;
+  transform: translate(-50%,-50%);
+  width: 700px; height: 320px;
+  background: radial-gradient(ellipse, rgba(78,125,113,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-section::after {
+  content: ''; position: absolute; top: 30%; right: 10%;
+  width: 300px; height: 300px;
+  background: radial-gradient(ellipse, rgba(193,127,58,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+.cta-kicker {
+  font-family: 'DM Mono', monospace; font-size: 11.5px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--sage); margin-bottom: 36px; display: block;
+}
+.cta-inner h2 {
+  font-family: 'Instrument Serif', serif; font-size: clamp(52px,7.5vw,112px);
+  font-weight: 400; letter-spacing: -0.03em; line-height: 0.94;
+  color: var(--on-light); margin-bottom: 40px;
+}
+.cta-inner h2 .dim { font-style: italic; color: var(--on-light-md); }
+.cta-actions { display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap; }
+.cta-trust {
+  display: flex; align-items: center; justify-content: center; gap: 28px;
+  margin-top: 44px; flex-wrap: wrap;
+}
+.cta-trust span {
+  font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--on-light-dim);
+  display: flex; align-items: center; gap: 6px;
+}
+.cta-trust span::before { content: '✓'; color: var(--sage); }
+
+/* ─────────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────────── */
+.site-footer {
+  background: var(--ink-3);
+  border-top: 1px solid var(--rule-dark);
+  padding: 60px 52px 36px;
+}
+.footer-top {
+  display: grid; grid-template-columns: 260px 1fr; gap: 80px;
+  margin-bottom: 52px; padding-bottom: 52px;
+  border-bottom: 1px solid var(--rule-dark);
+}
+.footer-logo-f {
+  font-family: 'DM Mono', monospace; font-size: 14px; font-weight: 500;
+  color: var(--on-dark); letter-spacing: 0.06em; text-decoration: none;
+  display: flex; align-items: center; gap: 7px; margin-bottom: 16px;
+}
+.footer-brand p { font-size: 14.5px; color: var(--on-dark-md); line-height: 1.75; margin-bottom: 14px; font-weight: 300; }
+.footer-addr { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.04em; color: var(--on-dark-dim); line-height: 1.9; margin-bottom: 16px; }
+.footer-social { display: flex; gap: 12px; }
+.footer-social a {
+  width: 34px; height: 34px;
+  border-radius: 50%; border: 1px solid rgba(255,255,255,0.18);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--on-dark-md); text-decoration: none;
+  font-size: 15px; transition: all 0.18s;
+}
+.footer-social a:hover { color: var(--teal); border-color: var(--teal); background: rgba(0,184,173,0.08); }
+
+.footer-cols { display: grid; grid-template-columns: repeat(4,1fr); gap: 32px; }
+.footer-col h4 { font-family: 'DM Mono', monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 18px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+.footer-col ul li a { font-size: 14.5px; font-weight: 300; color: var(--on-dark-md); text-decoration: none; transition: color 0.18s; }
+.footer-col ul li a:hover { color: var(--on-dark); }
+.footer-bottom {
+  display: flex; flex-direction: column; gap: 28px;
+}
+.footer-bottom-line {
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule-dark);
+}
+.footer-copy { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: var(--on-dark-dim); }
+.footer-certs { display: flex; gap: 12px; align-items: center; justify-content: center; }
+.footer-cert {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.04);
+  transition: border-color 0.18s, background 0.18s;
+  flex-shrink: 0;
+}
+.footer-cert:hover { border-color: rgba(255,255,255,0.22); background: rgba(255,255,255,0.07); }
+.footer-cert-icon {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.footer-cert-icon.soc2 { background: rgba(0,184,173,0.12); color: var(--teal); }
+.footer-cert-icon.iso { background: rgba(59,130,246,0.12); color: var(--blue); }
+.footer-cert-icon.secai { background: rgba(124,58,237,0.12); color: var(--violet); }
+.footer-cert-icon.privacy { background: rgba(193,127,58,0.12); color: var(--amber); }
+.footer-cert-icon.resilience { background: rgba(78,125,113,0.12); color: var(--sage); }
+.footer-cert-icon.txramp { background: rgba(59,130,246,0.15); color: var(--blue); }
+.footer-cert-icon svg { width: 16px; height: 16px; }
+.footer-cert-label {
+  font-family: 'DM Mono', monospace; font-size: 11px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--on-dark-md); line-height: 1.3;
+}
+.footer-cert-label strong {
+  display: block; font-weight: 500; color: var(--on-dark);
+  font-size: 11px; letter-spacing: 0.06em;
+}
+.footer-legal { display: flex; gap: 20px; }
+.footer-legal a { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--on-dark-dim); text-decoration: none; transition: color 0.18s; }
+.footer-legal a:hover { color: var(--on-dark); }
+
+/* ─────────────────────────────────────────────
+   SCROLL TO TOP
+───────────────────────────────────────────── */
+.scroll-top-btn {
+  position: fixed; bottom: 28px; right: 28px;
+  width: 40px; height: 40px;
+  background: var(--ink); color: var(--on-dark);
+  border: none; border-radius: 50%; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 19px; z-index: 100;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.18s;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.scroll-top-btn.visible { opacity: 1; visibility: visible; }
+.scroll-top-btn:hover { transform: translateY(-2px); }
+
+/* ─────────────────────────────────────────────
+   SECTION DIVIDERS
+───────────────────────────────────────────── */
+.section-divider-dark  { border-top: 1px solid var(--rule-dark); }
+.section-divider-light { border-top: 1px solid var(--rule-light); }
+
+/* ─────────────────────────────────────────────
+   ANIMATIONS
+───────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.hero-kicker { animation: fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) both 0.08s; }
+.hero h1     { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) both 0.16s; }
+.hero-sub    { animation: fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) both 0.28s; }
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .main-nav, .site-footer { padding-left: 28px; padding-right: 28px; }
+  .hero, .platform-section, .arch-section, .fw-section, .quote-section, .cta-section,
+  .about-section, .features-section { padding-left: 28px; padding-right: 28px; }
+  .numbers-section { padding-left: 28px; padding-right: 28px; }
+  .numbers-inner { grid-template-columns: 1fr 1fr; }
+  .num-block:nth-child(2) { border-right: none; }
+  .num-block:nth-child(3) { padding-left: 0; border-top: 1px solid var(--rule-light); padding-top: 40px; margin-top: 40px; }
+  .num-block:nth-child(4) { border-top: 1px solid var(--rule-light); padding-top: 40px; margin-top: 40px; }
+  .section-header-2col, .arch-intro, .fw-top { grid-template-columns: 1fr; gap: 40px; }
+  .arch-cols { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .arch-col { border-right: none; padding: 0; }
+  .platform-row { grid-template-columns: 40px 1fr; }
+  .pr-desc, .pr-tag { display: none; }
+  .platform-row::before { inset: 0 -28px; }
+  .fw-grid { grid-template-columns: 1fr; }
+  .fw-col { border-right: none; border-bottom: 1px solid var(--rule-dark); padding: 36px 0; }
+  .fw-col:last-child { border-bottom: none; }
+  .ind-section { padding: 80px 0; }
+  .ind-header, .ind-scroll { padding: 0 28px; }
+  .ind-scroll { flex-wrap: wrap; }
+  .ind-card { flex: none; width: calc(50% - 1px); border-right: 1px solid var(--rule-light) !important; }
+  .ind-card:nth-child(even) { border-right: none !important; }
+  .quotes-row { grid-template-columns: 1fr; }
+  .q-item { border-right: none; border-bottom: 1px solid var(--rule-dark); padding: 40px 0; }
+  .q-item:last-child { border-bottom: none; padding-left: 0; }
+  .q-item:nth-child(2) { padding-left: 0; }
+  .footer-top { grid-template-columns: 1fr; gap: 40px; }
+  .footer-cols { grid-template-columns: 1fr 1fr; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .service-card:nth-child(2) { border-right: 1px solid var(--rule-light); }
+  .service-card:nth-child(3) { border-top: none; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .feature-row { grid-template-columns: 1fr; gap: 36px; }
+  .feature-row.reverse { direction: ltr; }
+  .services-section { padding-left: 28px; padding-right: 28px; }
+}
+@media (max-width: 680px) {
+  .hero h1 { font-size: 50px; }
+  .nav-links { display: none; }
+  .mobile-nav-toggle { display: block; }
+  .hero-sub { grid-template-columns: 1fr; gap: 36px; }
+  .numbers-inner { grid-template-columns: 1fr; }
+  .num-block { border-right: none; padding: 0; border-top: 1px solid var(--rule-light); padding-top: 36px; margin-top: 36px; }
+  .num-block:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+  .arch-cols { grid-template-columns: 1fr; }
+  .ind-card { width: 100%; }
+  .footer-cols { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .cta-inner h2 { font-size: 44px; }
+  .hero-stats { gap: 28px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .service-card { border-right: 1px solid var(--rule-light) !important; }
+  .hero { padding: 80px 20px 60px; }
+  .services-section { padding: 0 20px 60px; }
+}
+
+/* Mobile nav overlay */
+.mobile-nav-overlay {
+  display: none;
+  position: fixed; inset: 0; z-index: 300;
+  background: rgba(0,0,0,0.4);
+}
+.mobile-nav-overlay.active { display: block; }
+.mobile-nav-panel {
+  position: fixed; top: 0; right: 0; bottom: 0;
+  width: 300px; max-width: 85vw;
+  background: var(--white);
+  padding: 24px;
+  z-index: 301;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+.mobile-nav-overlay.active .mobile-nav-panel { transform: translateX(0); }
+.mobile-nav-close {
+  display: flex; justify-content: flex-end; margin-bottom: 24px;
+}
+.mobile-nav-close button {
+  background: none; border: none; font-size: 24px; cursor: pointer; color: var(--on-light);
+}
+.mobile-nav-panel a {
+  display: block; padding: 10px 0;
+  font-size: 15px; color: var(--on-light-md);
+  text-decoration: none; border-bottom: 1px solid var(--rule-light);
+  transition: color 0.14s;
+}
+.mobile-nav-panel a:hover { color: var(--on-light); }
+.mobile-nav-panel .mobile-sub-label {
+  font-family: 'DM Mono', monospace; font-size: 11px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--on-light-dim); padding-top: 18px; padding-bottom: 6px;
+  border-bottom: none;
+}
+</style>
 </head>
+<body>
 
-<body class="index-page">
+<!-- ══ STRIP ══ -->
+<div class="strip">
+  <a href="https://share.hsforms.com/1UVlZRJVrTAuLMpcbB8SSSwqydzx" target="_blank">
+    <span class="strip-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+    Buy Uno via Microsoft using your Azure Consumption Credits
+    <span class="strip-cta">Learn how <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+  </a>
+</div>
 
-<!-- ======= Banner ======= -->
-<div class="banner">
-  <div class="container">
-    <a href="https://share.hsforms.com/1UVlZRJVrTAuLMpcbB8SSSwqydzx" target="_blank" class="banner-text"><i class="bi bi-bell"></i> Buy Uno via Microsoft using your Azure Consumption Credits!</a>
+<!-- ══ NAV ══ -->
+<nav class="main-nav">
+  <a class="nav-logo" href="index.html">
+    <img src="assets/img/uno/unoai_logo.png" alt="uno.ai">
+  </a>
+  <div class="nav-links">
+    <!-- About -->
+    <div class="nav-item">
+      <a href="the-uno-story.html">About <span class="nav-arrow">&#x25BC;</span></a>
+      <div class="nav-dropdown">
+        <a href="the-uno-story.html" class="nav-dropdown-item">
+          <div class="dropdown-icon i-teal"><i data-lucide="book-open"></i></div>
+          <div><div class="dropdown-title">The Uno Story</div><div class="dropdown-desc">Our journey and mission</div></div>
+        </a>
+        <a href="team.html" class="nav-dropdown-item">
+          <div class="dropdown-icon i-sage"><i data-lucide="users"></i></div>
+          <div><div class="dropdown-title">Team</div><div class="dropdown-desc">Meet the people behind Uno</div></div>
+        </a>
+        <a href="team-advisors.html" class="nav-dropdown-item">
+          <div class="dropdown-icon i-amber"><i data-lucide="award"></i></div>
+          <div><div class="dropdown-title">Advisors</div><div class="dropdown-desc">Industry experts guiding Uno</div></div>
+        </a>
+        <a href="in-the-news.html" class="nav-dropdown-item">
+          <div class="dropdown-icon i-amber"><i data-lucide="newspaper"></i></div>
+          <div><div class="dropdown-title">In the News</div><div class="dropdown-desc">Latest press coverage</div></div>
+        </a>
+      </div>
+    </div>
+    <!-- Platform -->
+    <div class="nav-item">
+      <a href="platform.html">Platform <span class="nav-arrow">&#x25BC;</span></a>
+      <div class="nav-dropdown">
+        <a href="platform.html" class="nav-dropdown-item">
+          <div class="dropdown-icon i-teal"><i data-lucide="layers"></i></div>
+          <div><div class="dropdown-title">Platform Overview</div><div class="dropdown-desc">AI-native GRC architecture</div></div>
+        </a>
+        <a href="modular.html" class="nav-dropdown-item">
+          <div class="dropdown-icon i-sage"><i data-lucide="puzzle"></i></div>
+          <div><div class="dropdown-title">Modular</div><div class="dropdown-desc">Pick the modules you need</div></div>
+        </a>
+        <a href="customizable.html" class="nav-dropdown-item">
+          <div class="dropdown-icon i-amber"><i data-lucide="sliders"></i></div>
+          <div><div class="dropdown-title">Customizable</div><div class="dropdown-desc">Adapt to your workflows</div></div>
+        </a>
+        <a href="integrations.html" class="nav-dropdown-item">
+          <div class="dropdown-icon i-violet"><i data-lucide="plug"></i></div>
+          <div><div class="dropdown-title">Integrations</div><div class="dropdown-desc">Connect your entire stack</div></div>
+        </a>
+      </div>
+    </div>
+    <!-- Solutions -->
+    <div class="nav-item">
+      <a href="state-of-art-ai-agents.html">Solutions <span class="nav-arrow">&#x25BC;</span></a>
+      <div class="nav-dropdown">
+        <a href="state-of-art-ai-agents.html" class="nav-dropdown-item">
+          <div class="dropdown-icon i-teal"><i data-lucide="zap"></i></div>
+          <div><div class="dropdown-title">State of Art AI Agents</div><div class="dropdown-desc">Autonomous GRC agents</div></div>
+        </a>
+        <a href="enterprise-risk.html" class="nav-dropdown-item">
+          <div class="dropdown-icon i-sage"><i data-lucide="trending-up"></i></div>
+          <div><div class="dropdown-title">Enterprise Risk Management</div><div class="dropdown-desc">AI-powered risk quantification</div></div>
+        </a>
+        <div class="nav-dropdown-item has-submenu">
+          <div class="dropdown-icon i-amber"><i data-lucide="layout-grid"></i></div>
+          <div><div class="dropdown-title">Full Suite GRC</div><div class="dropdown-desc">Complete GRC platform</div></div>
+          <div class="nav-sub-dropdown">
+            <a href="compliance-and-attestations.html" class="submenu-item"><div class="submenu-title">Compliance & Attestations</div><div class="submenu-desc">Multi-framework compliance</div></a>
+            <a href="internal-audit.html" class="submenu-item"><div class="submenu-title">Internal Audit</div><div class="submenu-desc">AI-powered audit management</div></a>
+            <a href="risk-assessment.html" class="submenu-item"><div class="submenu-title">Risk Assessment</div><div class="submenu-desc">Quantified risk analysis</div></a>
+            <a href="controls-monitoring.html" class="submenu-item"><div class="submenu-title">Controls Monitoring</div><div class="submenu-desc">Continuous control testing</div></a>
+          </div>
+        </div>
+        <a href="third-party-risks.html" class="nav-dropdown-item">
+          <div class="dropdown-icon i-violet"><i data-lucide="link-2"></i></div>
+          <div><div class="dropdown-title">Third Party Risks</div><div class="dropdown-desc">Autonomous vendor assessment</div></div>
+        </a>
+        <a href="business-resilience.html" class="nav-dropdown-item">
+          <div class="dropdown-icon i-ink"><i data-lucide="activity"></i></div>
+          <div><div class="dropdown-title">Business Resilience</div><div class="dropdown-desc">BIA and continuity planning</div></div>
+        </a>
+        <a href="ai-governance.html" class="nav-dropdown-item">
+          <div class="dropdown-icon i-violet"><i data-lucide="brain-circuit"></i></div>
+          <div><div class="dropdown-title">AI Governance</div><div class="dropdown-desc">Govern your AI deployments</div></div>
+        </a>
+      </div>
+    </div>
+    <!-- Blog -->
+    <div class="nav-item"><a href="https://blog.uno.ai/" target="_blank">Blog</a></div>
+    <!-- Partners -->
+    <div class="nav-item"><a href="partners.html">Partners</a></div>
+    <!-- Contact -->
+    <div class="nav-item"><a href="contact.html">Contact</a></div>
+  </div>
+  <div class="nav-right">
+    <a href="https://share.hsforms.com/1UVlZRJVrTAuLMpcbB8SSSwqydzx" target="_blank" class="nav-cta">Get a Demo</a>
+    <button class="mobile-nav-toggle" aria-label="Open menu">&#9776;</button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav-overlay" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <div class="mobile-nav-close"><button aria-label="Close menu">&times;</button></div>
+    <a href="index.html">Home</a>
+    <div class="mobile-sub-label">About</div>
+    <a href="the-uno-story.html">The Uno Story</a>
+    <a href="team.html">Team</a>
+    <a href="team-advisors.html">Advisors</a>
+    <a href="in-the-news.html">In the News</a>
+    <div class="mobile-sub-label">Platform</div>
+    <a href="platform.html">Platform Overview</a>
+    <a href="modular.html">Modular</a>
+    <a href="customizable.html">Customizable</a>
+    <a href="integrations.html">Integrations</a>
+    <div class="mobile-sub-label">Solutions</div>
+    <a href="state-of-art-ai-agents.html">AI Agents</a>
+    <a href="enterprise-risk.html">Enterprise Risk</a>
+    <a href="enterprise-grc.html">Full Suite GRC</a>
+    <a href="compliance-and-attestations.html">Compliance & Attestations</a>
+    <a href="internal-audit.html">Internal Audit</a>
+    <a href="risk-assessment.html">Risk Assessment</a>
+    <a href="controls-monitoring.html">Controls Monitoring</a>
+    <a href="third-party-risks.html">Third Party Risks</a>
+    <a href="business-resilience.html">Business Resilience</a>
+    <a href="ai-governance.html">AI Governance</a>
+    <div class="mobile-sub-label">More</div>
+    <a href="https://blog.uno.ai/" target="_blank">Blog</a>
+    <a href="partners.html">Partners</a>
+    <a href="contact.html">Contact</a>
   </div>
 </div>
 
-<header id="header" class="header d-flex align-items-center fixed-top">
+<!-- ══ HERO ══ -->
+<div class="surface-white">
+  <section class="hero">
+    <div class="hero-kicker">AI-Native GRC Platform</div>
+    <h1>
+      uno is<br>
+      <span class="hero-bracket-l">[</span><span class="cycling-word" id="cycling">risk</span><span class="hero-bracket-r">]</span><br>
+      <span class="hero-dimline">made intelligent</span>
+    </h1>
+    <div class="hero-sub">
+      <p class="hero-desc">
+        The world's most sophisticated AI agents replace manual GRC - delivering 40x speed, 20x scale, and complete coverage across risk, compliance, and resilience.
+      </p>
+      <div class="hero-actions">
+        <div class="hero-btns">
+          <a href="https://share.hsforms.com/1UVlZRJVrTAuLMpcbB8SSSwqydzx" target="_blank" class="btn-solid-ink">
+            Get the Uno Advantage
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#platform" class="btn-ghost-light">
+            Explore the platform
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <span class="hs-val"><span class="a">40</span>x</span>
+            <span class="hs-lbl">Faster</span>
+          </div>
+          <div>
+            <span class="hs-val"><span class="a">20</span>x</span>
+            <span class="hs-lbl">Scale</span>
+          </div>
+          <div>
+            <span class="hs-val">95<span class="a">%</span></span>
+            <span class="hs-lbl">AI Accuracy</span>
+          </div>
+          <div>
+            <span class="hs-val">100<span class="a">%</span></span>
+            <span class="hs-lbl">Coverage</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/uno/unoai_logo.png" alt="uno.ai">
-        <!-- <h1 class="sitename">uno.ai</h1> -->
+<!-- ══ FEATURED SERVICES ══ -->
+<div class="surface-white">
+  <div class="services-section">
+    <div class="services-grid">
+      <a href="enterprise-risk.html" class="service-card">
+        <div class="service-icon cyan"><i data-lucide="activity"></i></div>
+        <h3>Enterprise Risk</h3>
+        <p>See Risk Clearly. Act Confidently. Make Better Decisions.</p>
       </a>
+      <a href="compliance-and-controls.html" class="service-card">
+        <div class="service-icon orange"><i data-lucide="radio"></i></div>
+        <h3>Compliance & Controls</h3>
+        <p>Measure Progress Continuously. Confirm Compliance. Quantify.</p>
+      </a>
+      <a href="third-party-risks.html" class="service-card">
+        <div class="service-icon teal"><i data-lucide="file-text"></i></div>
+        <h3>Third Party Risks</h3>
+        <p>Detect Risks Fast. Protect Without Delay. Respond with Precision.</p>
+      </a>
+      <a href="audits-and-assessments.html" class="service-card">
+        <div class="service-icon violet"><i data-lucide="scan"></i></div>
+        <h3>Audits & Assessments</h3>
+        <p>Understand Fully. Act Intelligently. Simplify Audits and Assessments.</p>
+      </a>
+    </div>
+  </div>
+</div>
 
-      <nav id="navmenu" class="navmenu">
+<!-- ══ MARQUEE ══ -->
+<div class="surface-dark marquee-wrap">
+  <div class="marquee-track">
+    <span class="m-item">Banking & Fintech</span>
+    <span class="m-item">Healthcare & Life Sciences</span>
+    <span class="m-item">Public Sector & Core Infrastructure</span>
+    <span class="m-item">Fortune 1000</span>
+    <span class="m-item">HIPAA & 405(d)</span>
+    <span class="m-item">FedRAMP & CMMC</span>
+    <span class="m-item">OCC Examination & MRA</span>
+    <span class="m-item">NYDFS & FFIEC</span>
+    <span class="m-item">FDIC Third-Party Guidance</span>
+    <span class="m-item">Local Laws, Global Regulations</span>
+    <span class="m-item">Managed Services</span>
+    <span class="m-item">Banking & Fintech</span>
+    <span class="m-item">Healthcare & Life Sciences</span>
+    <span class="m-item">Public Sector & Core Infrastructure</span>
+    <span class="m-item">Fortune 1000</span>
+    <span class="m-item">HIPAA & 405(d)</span>
+    <span class="m-item">FedRAMP & CMMC</span>
+    <span class="m-item">OCC Examination & MRA</span>
+    <span class="m-item">NYDFS & FFIEC</span>
+    <span class="m-item">FDIC Third-Party Guidance</span>
+    <span class="m-item">Local Laws, Global Regulations</span>
+    <span class="m-item">Managed Services</span>
+  </div>
+</div>
+
+<!-- ══ ABOUT - with image ══ -->
+<div class="surface-paper section-divider-light">
+  <div class="about-section">
+    <div class="about-grid">
+      <div class="about-img">
+        <img src="assets/img/uno/uno_modules_infographic.png" alt="Uno Modules Infographic">
+      </div>
+      <div class="about-content">
+        <h2>AI Agentic Platform <span class="dim">to enhance productivity,</span> while saving costs</h2>
+        <p class="about-lead">
+          Increase accuracy, scale, and speed with the world's most comprehensive and sophisticated modern GRC platform.
+        </p>
+        <ul class="about-list">
+          <li><span class="check-icon"><i data-lucide="check"></i></span> <span>Move from mundane manual work to AI doing the work for you.</span></li>
+          <li><span class="check-icon"><i data-lucide="check"></i></span> <span>Scale your team, with AI teammates.</span></li>
+          <li><span class="check-icon"><i data-lucide="check"></i></span> <span>Go from expensive & slow risk and compliance management to fast, efficient, & effective coverage.</span></li>
+        </ul>
+        <p class="about-text">
+          Enterprise ready AI platform that assures reliability, consistency, dependability, and explainability while delivering outstanding features and capabilities.
+          Reason why banking, financial services, healthcare, and enterprises love Uno!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PLATFORM SOLUTIONS ══ -->
+<div class="surface-dark section-divider-dark" id="platform">
+  <div class="platform-section">
+    <div class="section-header-2col">
+      <h2 class="section-h2">
+        one platform,<br>
+        <span class="dim">every need</span>
+      </h2>
+      <div class="section-right-col">
+        <p>Uno unifies risk, compliance, audit, and resilience into a single AI-native platform - replacing fragmented legacy tools and the manual effort that makes GRC slow and expensive.</p>
+        <a href="platform.html" class="btn-ghost-dark" style="width:fit-content;">View all solutions →</a>
+      </div>
+    </div>
+    <div class="platform-list">
+      <a href="enterprise-risk.html" class="platform-row">
+        <span class="pr-num">01</span>
+        <div class="pr-title">Enterprise Risk Management</div>
+        <div class="pr-desc">AI auto-ranks and quantifies risk across structured and unstructured data. Real-time scoring, continuous monitoring, and board-ready reporting - automatically.</div>
+        <span class="pr-tag">Risk</span>
+      </a>
+      <a href="compliance-and-attestations.html" class="platform-row">
+        <span class="pr-num">02</span>
+        <div class="pr-title">Compliance & Attestations</div>
+        <div class="pr-desc">Multi-framework compliance - NIST, ISO, SOC 2, PCI, HIPAA - without duplication. Continuously pass design and operational effectiveness tests.</div>
+        <span class="pr-tag">Compliance</span>
+      </a>
+      <a href="third-party-risks.html" class="platform-row">
+        <span class="pr-num">03</span>
+        <div class="pr-title">Third-Party Risk</div>
+        <div class="pr-desc">Autonomous vendor assessment at 40x speed. Neural document ingestion, CMMI maturity scoring, and concentration risk analysis - all without manual effort.</div>
+        <span class="pr-tag">TPRM</span>
+      </a>
+      <a href="audits-and-assessments.html" class="platform-row">
+        <span class="pr-num">04</span>
+        <div class="pr-title">Audits & Assessments</div>
+        <div class="pr-desc">Internal audits, maturity assessments, and evidence collection at scale. AI transitions you from automated collection to autonomous analysis.</div>
+        <span class="pr-tag">Audit</span>
+      </a>
+      <a href="business-resilience.html" class="platform-row">
+        <span class="pr-num">05</span>
+        <div class="pr-title">Business Resilience</div>
+        <div class="pr-desc">AI-powered BIA, continuity planning, and resilience scoring. Ensure operational continuity and generate regulatory-ready documentation on demand.</div>
+        <span class="pr-tag">Resilience</span>
+      </a>
+      <a href="ai-governance.html" class="platform-row">
+        <span class="pr-num">06</span>
+        <div class="pr-title">AI Governance</div>
+        <div class="pr-desc">Govern the AI your organization builds and deploys. Risk frameworks, model inventories, and bias assessments built for the age of AI.</div>
+        <span class="pr-tag">Governance</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FEATURES - Uno Advantage ══ -->
+<div class="surface-white section-divider-light">
+  <div class="features-section">
+    <div class="features-header">
+      <h2>the uno <span class="dim">advantage</span></h2>
+      <p>Comprehensive full-featured state of art platform for Governance, Risk, Compliance, & Resilience</p>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-img">
+        <img src="assets/img/uno/ai_agents_and_ai_teammates.png" alt="AI Agents and AI Teammates">
+      </div>
+      <div class="feature-content">
+        <h3>Ensure compliance with confidence</h3>
+        <p class="feature-lead">
+          Regulatory compliance, certifications, and attestations made easy, without compromising on quality or scope.
+        </p>
+        <ul class="feature-list">
+          <li><span class="check-icon"><i data-lucide="check"></i></span> <span>Autonomously run comprehensive coverage & gap analysis in an instant</span></li>
+          <li><span class="check-icon"><i data-lucide="check"></i></span> <span>Comply across multiple frameworks & standards, without the duplication of effort</span></li>
+          <li><span class="check-icon"><i data-lucide="check"></i></span> <span>Continuously pass all tests of design & operational effectiveness</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row reverse">
+      <div class="feature-img">
+        <img src="assets/img/uno/legacy_vs_uno.png" alt="Legacy vs Uno">
+      </div>
+      <div class="feature-content">
+        <h3>Measure, Quantify, Treat, and Manage All Risks</h3>
+        <p class="feature-lead">
+          Accurate and effective measurement and assessment across structured and unstructured risk management initiatives.
+        </p>
+        <p class="feature-text">
+          Use AI to autorank and quantify risk assessments. Dig deep into documents and data to analyze and measure the risk hidden in operational details.
+        </p>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-img">
+        <img src="assets/img/uno/customize_and_extend.png" alt="Customize and Extend">
+      </div>
+      <div class="feature-content">
+        <h3>Run Assessments & Comprehensive Audits</h3>
+        <p class="feature-text" style="margin-bottom: 18px;">
+          Maturity assessments, risk measurement efforts, and internal audits made simple, effective, and fast with greater coverage and higher accuracy.
+        </p>
+        <ul class="feature-list">
+          <li><span class="check-icon"><i data-lucide="check"></i></span> <span>Collect, assess, quantify, and classify responses & evidence accurately, at scale.</span></li>
+          <li><span class="check-icon"><i data-lucide="check"></i></span> <span>Transition from automated collection to autonomous analysis.</span></li>
+          <li><span class="check-icon"><i data-lucide="check"></i></span> <span>Reduce effort, reuse evidence, and automatically crosswalk.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row reverse">
+      <div class="feature-img">
+        <img src="assets/img/uno/business_resilience.png" alt="Business Resilience">
+      </div>
+      <div class="feature-content">
+        <h3>Enable Business Resilience</h3>
+        <p class="feature-lead">
+          Robust governance, risk management, and compliance. Ensure business resilience, reduce costs, and improve operational efficiency.
+        </p>
+        <p class="feature-text">
+          Use AI Agents for comprehensive, accurate, and integrated risk management and business impact analysis. Ensure continuity and resilience with confidence.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ NUMBERS ══ -->
+<div class="surface-paper numbers-section">
+  <div class="numbers-inner">
+    <div class="num-block">
+      <span class="num-val"><span class="a">40</span>x</span>
+      <span class="num-label">Assessment Speed</span>
+      <p class="num-desc">500-question vendor assessments complete in minutes, not days.</p>
+    </div>
+    <div class="num-block">
+      <span class="num-val"><span class="a">20</span>x</span>
+      <span class="num-label">Greater Scale</span>
+      <p class="num-desc">Full portfolio coverage - not the 5-10% sampling most teams manage.</p>
+    </div>
+    <div class="num-block">
+      <span class="num-val">95<span class="sa">%</span>+</span>
+      <span class="num-label">AI Grading Accuracy</span>
+      <p class="num-desc">Domain-trained LLMs purpose-built for GRC, not repurposed from elsewhere.</p>
+    </div>
+    <div class="num-block">
+      <span class="num-val">60<span class="sa">-</span>70%</span>
+      <span class="num-label">Cost Reduction</span>
+      <p class="num-desc">Personnel and consultant costs eliminated through intelligent automation.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ARCHITECTURE ══ -->
+<div class="surface-dark section-divider-dark">
+  <div class="arch-section">
+    <div class="arch-intro">
+      <h2>
+        the intelligence<br>
+        <span class="dim">underneath</span>
+      </h2>
+      <p>Uno's AI isn't a layer bolted onto a legacy tool. It's purpose-built intelligence - four interconnected layers trained on thousands of controls and regulations, designed from the ground up to do GRC work autonomously.</p>
+    </div>
+    <div class="arch-cols">
+      <div class="arch-col">
+        <span class="arch-col-num">01 / 04</span>
+        <h3>Context-Aware<br>Knowledge Graphs</h3>
+        <p>A living model of your risk and compliance ecosystem. Vendor relationships, regulatory obligations, and control dependencies - mapped and maintained automatically as your organization evolves.</p>
+      </div>
+      <div class="arch-col">
+        <span class="arch-col-num">02 / 04</span>
+        <h3>Neural Ingestion<br>Fabric</h3>
+        <p>Processes any document, any format - SOC 2 reports, policies, pen test results, contracts, financials. Extracts findings and scope with zero manual intervention. Eliminates 90% of data entry.</p>
+      </div>
+      <div class="arch-col">
+        <span class="arch-col-num">03 / 04</span>
+        <h3>Domain-Trained<br>LLMs</h3>
+        <p>Language models trained specifically on NIST, ISO, SOC 2, PCI, HIPAA control libraries. Achieves 95%+ autonomous grading accuracy - versus 60-70% for off-the-shelf AI models.</p>
+      </div>
+      <div class="arch-col">
+        <span class="arch-col-num">04 / 04</span>
+        <h3>Semantic<br>Reasoning Layers</h3>
+        <p>Goes beyond pattern matching. Understands context, detects compensating controls, identifies cascading risks, and surfaces what actually matters - reducing false positives by 80%.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FRAMEWORKS ══ -->
+<div class="surface-dark2 section-divider-dark">
+  <div class="fw-section">
+    <div class="fw-top">
+      <h2 class="section-h2">
+        assess once,<br>
+        <span class="dim">map everywhere</span>
+      </h2>
+      <p>Pre-loaded with every major global framework. Multi-framework crosswalk eliminates redundant assessment effort. Fully customizable to your industry and control library.</p>
+    </div>
+    <div class="fw-grid">
+      <div class="fw-col">
+        <span class="fw-col-label">Security & Privacy</span>
+        <div class="fw-tags">
+          <span class="fw-tag">NIST CSF 2.0</span>
+          <span class="fw-tag">NIST 800-53r5</span>
+          <span class="fw-tag">ISO / IEC 27001</span>
+          <span class="fw-tag">SOC 2 Type II</span>
+          <span class="fw-tag">PCI DSS</span>
+          <span class="fw-tag">HIPAA / HITECH</span>
+          <span class="fw-tag">HITRUST CSF</span>
+          <span class="fw-tag">GDPR · CCPA · LGPD</span>
+        </div>
+      </div>
+      <div class="fw-col">
+        <span class="fw-col-label">Regulatory</span>
+        <div class="fw-tags">
+          <span class="fw-tag">OCC Heightened Standards</span>
+          <span class="fw-tag">FDIC Third-Party Guidance</span>
+          <span class="fw-tag">Federal Reserve SR 13-19</span>
+          <span class="fw-tag">NYDFS Part 500</span>
+          <span class="fw-tag">SEC / FINRA</span>
+          <span class="fw-tag">DORA</span>
+          <span class="fw-tag">CMMC 2.0</span>
+          <span class="fw-tag">GLBA · FCRA · ECOA</span>
+        </div>
+      </div>
+      <div class="fw-col">
+        <span class="fw-col-label">Operational & Custom</span>
+        <div class="fw-tags">
+          <span class="fw-tag">ISO 22301</span>
+          <span class="fw-tag">ISO 9001</span>
+          <span class="fw-tag">COBIT 2019</span>
+          <span class="fw-tag">Essential Eight</span>
+          <span class="fw-tag">CRI Profile</span>
+          <span class="fw-tag">Shared Assessments SIG</span>
+          <span class="fw-tag">Custom Frameworks</span>
+          <span class="fw-tag">Proprietary Controls</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ INDUSTRIES ══ -->
+<div class="surface-paper ind-section">
+  <div class="ind-header">
+    <h2>
+      built for the<br>
+      <span class="dim" style="font-style:italic; color:var(--on-light-md);">most regulated</span>
+    </h2>
+  </div>
+  <div class="ind-scroll">
+    <a href="banking-and-fintech.html" class="ind-card">
+      <span class="ind-num">01 / 04</span>
+      <h3>Banking & Fintech</h3>
+      <p>OCC, FDIC, and Federal Reserve examination readiness. Complete TPRM and concentration risk analysis for regulated financial institutions.</p>
+    </a>
+    <a href="healthcare-and-life-sciences.html" class="ind-card">
+      <span class="ind-num">02 / 04</span>
+      <h3>Healthcare & Life Sciences</h3>
+      <p>HIPAA, HITRUST, and FDA compliance automation. Protect patient data and streamline regulatory reporting at scale.</p>
+    </a>
+    <a href="fortune-2000.html" class="ind-card">
+      <span class="ind-num">03 / 04</span>
+      <h3>Fortune 1000 Enterprises</h3>
+      <p>Enterprise-grade GRC at global scale. Unified risk, compliance, and resilience across complex, multi-jurisdictional operations.</p>
+    </a>
+    <a href="managed-services.html" class="ind-card">
+      <span class="ind-num">04 / 04</span>
+      <h3>Managed Services</h3>
+      <p>White-label GRC delivery for MSPs. Run compliant, scalable risk programs for your clients without adding headcount.</p>
+    </a>
+  </div>
+</div>
+
+<!-- ══ TESTIMONIALS ══ -->
+<div class="surface-dark section-divider-dark">
+  <div class="quote-section">
+    <span class="quote-kicker">What clients say</span>
+    <blockquote>
+      "Uno transformed our six-week quarterly compliance cycle into something that runs continuously and automatically. <strong>The first examination produced documentation the examiners called the most organized they had seen.</strong>"
+    </blockquote>
+    <div class="quote-attr">
+      <div class="q-rule"></div>
+      <span class="q-who">Risk Officer - Global 2000 Financial Institution</span>
+    </div>
+    <div class="quotes-row">
+      <div class="q-item">
+        <div class="q-stars">★★★★★</div>
+        <p class="q-text">"From assessing 8% of asset portfolio annually to continuous monitoring of 100%. The AI grading is more consistent than any analyst we've hired, and it never sleeps."</p>
+        <span class="q-who-sm">CISO - Healthcare Network, 20+ Facilities</span>
+      </div>
+      <div class="q-item">
+        <div class="q-stars">★★★★★</div>
+        <p class="q-text">"Uno reduces TPRM personnel costs by 65% in the first year. It pays for itself. The ROI is visible within 90 days of deployment."</p>
+        <span class="q-who-sm">Third Party Risk Leader - Fintech</span>
+      </div>
+      <div class="q-item">
+        <div class="q-stars">★★★★★</div>
+        <p class="q-text">"Partnering with Uno has been fantastic. Their AI-native platform lets us bring best-of-breed GRC to our clients at a speed and depth we simply couldn't achieve on our own."</p>
+        <span class="q-who-sm">Managing Director - Global Advisory Partner</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CTA ══ -->
+<div class="cta-section">
+  <div class="cta-inner">
+    <span class="cta-kicker">Ready to transform your GRC program?</span>
+    <h2>
+      get the<br>
+      <span class="dim">uno advantage</span>
+    </h2>
+    <div class="cta-actions">
+      <a href="https://share.hsforms.com/1UVlZRJVrTAuLMpcbB8SSSwqydzx" target="_blank" class="btn-solid-ink">
+        Request a Demo
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="platform.html" class="btn-ghost-light">Explore the platform →</a>
+    </div>
+    <div class="cta-trust">
+      <span>SOC 2 Type II Certified</span>
+      <span>ISO 27001 : 2022</span>
+      <span>Live in 2 weeks</span>
+      <span>No lock-in</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo-f">
+        UNO.AI
+      </a>
+      <p>The world's most sophisticated AI-native GRC platform. Transforming how enterprises manage risk, ensure compliance, and build resilience.</p>
+      <div class="footer-addr">655 Castro St. Suite 4<br>Mountain View, CA 94041, USA<br>contact@uno.ai</div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/unoai/" target="_blank" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://blog.uno.ai" target="_blank" aria-label="Blog"><i data-lucide="pen-line"></i></a>
+      </div>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Platform</h4>
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li class="dropdown"><a href="the-uno-story.html"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="the-uno-story.html">The Uno Story</a></li>
-              <li><a href="team.html">Team</a></li>
-              <!-- <li><a href="investors-and-advisors.html">Investors & Advisors</a></li> -->
-              <li><a href="in-the-news.html">In the News</a></li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="platform.html"><span>Platform</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="modular.html">Modular</a></li>
-              <li><a href="customizable.html">Customizable</a></li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="state-of-art-ai-agents.html"><span>Solutions</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="state-of-art-ai-agents.html">State of Art AI Agents</a></li>
-              <li><a href="enterprise-risk.html">Enterprise Risk Management</a></li>
-              <li class="dropdown"><a href="enterprise-grc.html"><span>Full Suite GRC</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="compliance-and-attestations.html">Compliance & Attestations</a></li>
-                  <li><a href="internal-audit.html">Internal Audit</a></li>
-                  <li><a href="risk-assessment.html">Risk Assessment</a></li>
-                  <!-- <li><a href="regulatory-reporting.html">Regulatory Reporting</a></li> -->
-                  <li><a href="controls-monitoring.html">Controls Monitoring</a></li>
-                </ul>
-              </li>
-              <li><a href="third-party-risks.html">Third Party Risks</a></li>
-              <!-- <li><a href="managed-services.html">Managed Services</a></li> -->
-              <li><a href="business-resilience.html">Business Resilience</a></li>
-              <!-- <li><a href="contractual-obligations.html">Contractual Obligations</a></li> -->
-              <li><a href="ai-governance.html">AI Governance</a></li>
-            </ul>
-          </li>
-          <!-- <li><a href="success-stories.html">Success Stories</a></li> -->
-          <!-- <li><a href="blog.html">Blog</a></li> -->
-          <li><a href="https://blog.uno.ai/" target="_blank">Blog</a></li>
+          <li><a href="state-of-art-ai-agents.html">AI Agents</a></li>
+          <li><a href="modular.html">Modular</a></li>
+          <li><a href="customizable.html">Customizable</a></li>
+          <li><a href="integrations.html">Integrations</a></li>
+          <li><a href="platform.html">Overview</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="enterprise-risk.html">Enterprise Risk</a></li>
+          <li><a href="compliance-and-attestations.html">Compliance & Attestations</a></li>
+          <li><a href="third-party-risks.html">Third-Party Risk</a></li>
+          <li><a href="internal-audit.html">Internal Audit</a></li>
+          <li><a href="ai-governance.html">AI Governance</a></li>
+          <li><a href="business-resilience.html">Business Resilience</a></li>
+          <li><a href="controls-monitoring.html">Controls Monitoring</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="the-uno-story.html">The Uno Story</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="team-advisors.html">Advisors</a></li>
+          <li><a href="in-the-news.html">In the News</a></li>
           <li><a href="partners.html">Partners</a></li>
+          <li><a href="https://blog.uno.ai/" target="_blank">Blog</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-    </div>
-  </header>
-
-  <main class="main">
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero section light-background">
-
-      <!-- <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in"> -->
-
-      <div id="hero-carousel" class="carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-
-        <div class="container position-relative">
-
-          <div class="carousel-item active">
-            <div class="carousel-container">
-              <h3>World's Most Sophisticated</h3>
-              <h2>AI Agents Native GRC Platform</h2>
-              <p>40x speed, 20x scale against status quo!</p>
-              <a href="https://share.hsforms.com/1UVlZRJVrTAuLMpcbB8SSSwqydzx" target="_blank" class="btn-get-started">Get the Uno Advantage!</a>
-            </div>
-          </div><!-- End Carousel Item -->
-
-          <div class="carousel-item">
-            <div class="carousel-container">
-              <h2>Service as a Software (Platform)</h2>
-              <p>Get enhanced productivity at scale, while savings costs</p>
-              <a href="https://share.hsforms.com/1UVlZRJVrTAuLMpcbB8SSSwqydzx" target="_blank" class="btn-get-started">Get the Uno Advantage!</a>
-            </div>
-          </div><!-- End Carousel Item -->
-
-          <div class="carousel-item">
-            <div class="carousel-container">
-              <h2>Enterprise Ready AI</h2>
-              <h3>Banking, Healthcare, & Fortune 1000 Trust it</h3>
-              <p>Reliability, dependability, and customizability to transition from legacy to an AI enabled future.</p>
-              <a href="https://share.hsforms.com/1UVlZRJVrTAuLMpcbB8SSSwqydzx" target="_blank" class="btn-get-started">Get the Uno Advantage!</a>
-            </div>
-          </div><!-- End Carousel Item -->
-
-          <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-          </a>
-
-          <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-          </a>
-
-          <ol class="carousel-indicators"></ol>
-
-        </div>
-
       </div>
-
-    </section><!-- /Hero Section -->
-
-    <!-- Featured Services Section -->
-    <section id="featured-services" class="featured-services section">
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item item-cyan position-relative">
-              <div class="icon">
-                <i class="bi bi-activity"></i>
-              </div>
-              <a href="enterprise-risk.html" class="stretched-link">
-                <h3>Enterprise Risk</h3>
-              </a>
-              <p>See Risk Clearly. Act Confidently. Make Better Decisions.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item item-orange position-relative">
-              <div class="icon">
-                <i class="bi bi-broadcast"></i>
-              </div>
-              <a href="compliance-and-controls.html" class="stretched-link">
-                <h3>Compliance & Controls</h3>
-              </a>
-              <p>Measure Progress Continuously. Confirm Compliance. Quantify.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item item-teal position-relative">
-              <div class="icon">
-                <i class="bi bi-body-text"></i>
-              </div>
-              <a href="third-party-risks.html" class="stretched-link">
-                <h3>Third Party Risks</h3>
-              </a>
-              <p>Detect Risks Fast. Protect Without Delay. Respond with Precision.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item item-red position-relative">
-              <div class="icon">
-                <i class="bi bi-bounding-box-circles"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Audits & Assessments</h3>
-              </a>
-              <p>Understand Fully. Act Intelligently. Simplify Audits and Assessments.</p>
-              <a href="audits-and-assessments.html" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-        </div>
-
-      </div>
-
-    </section><!-- /Featured Services Section -->
-
-    <!-- About Section -->
-    <section id="about" class="about section light-background">
-
-      <div class="container">
-
-        <div class="row gy-4">
-          <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/uno/uno_modules_infographic.png" class="img-fluid" alt="">
-            <!-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a> -->
-          </div>
-          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
-            <h3>AI Agentic Platform to enhance productivity, while saving costs!</h3>
-            <p class="fst-italic">
-              Increase accuracy, scale, and speed with the world's most comprehensive and sophisticated modern GRC platform.
-            </p>
-            <ul>
-              <li><i class="bi bi-check2-all"></i> <span>Move from mundane manual work to AI doing the work for you.</span></li>
-              <li><i class="bi bi-check2-all"></i> <span>Scale your team, with AI teammates.</span></li>
-              <li><i class="bi bi-check2-all"></i> <span>Go from expensive & slow risk and compliance management to fast, efficient, & effective coverage.</span></li>
-            </ul>
-            <p>
-              Enterprise ready AI platform that assures reliability, consistency, dependability, and explainability while delivering outstanding features and capabilities.
-              Reason why banking, financial services, healthcare, and enterprises love Uno!
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /About Section -->
-
-    <!-- Features Section -->
-    <section id="features" class="features section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Uno Advantage!</h2>
-        <p>Comprehensive full featured state of art platform for Governance, Risk, Compliance, & Resilience</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4 align-items-center features-item">
-          <div class="col-md-7 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
-            <img src="assets/img/uno/ai_agents_and_ai_teammates.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-md-5" data-aos="fade-up" data-aos-delay="100">
-            <h3>Ensure compliance with confidence</h3>
-            <p class="fst-italic">
-              Regulatory compliance, certifications, and attestations made easy, without compromising on quality or scope. 
-            </p>
-            <ul>
-              <li><i class="bi bi-check"></i><span>Autonomously run comprehensive coverage & gap analysis in an instant</span></li>
-              <li><i class="bi bi-check"></i> <span>Comply across multiple frameworks & standards, without the duplication of effort</span></li>
-              <li><i class="bi bi-check"></i> <span>Continuously pass all tests of design & operational effectiveness</span></li>
-            </ul>
-          </div>
-        </div><!-- Features Item -->
-
-        <div class="row gy-4 align-items-center features-item">
-          <div class="col-md-7 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-            <img src="assets/img/uno/legacy_vs_uno.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-md-5 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
-            <h3>Measure, Quantify, Treat, and Manage All Risks</h3>
-            <p class="fst-italic">
-              Accurate and effective measurement and assessment across structured and unstructured risk management initiatives.
-            </p>
-            <p>
-              Use AI to autorank and quantify risk assessments. Dig deep into documents and data to analyze and measure the risk hidden in operational details.
-            </p>
-          </div>
-        </div><!-- Features Item -->
-
-        <div class="row gy-4 align-items-center features-item">
-          <div class="col-md-7 d-flex align-items-center" data-aos="zoom-out">
-            <img src="assets/img/uno/customize_and_extend.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-md-5" data-aos="fade-up">
-            <h3>Run Assessments & Comprehensive Audits</h3>
-            <p>Maturity assessments, risk measurement efforts, and internal audits made simple, effective, and fast with greater coverage and higher accuracy.</p>
-            <ul>
-              <li><i class="bi bi-check"></i> <span>Collect, assess, quantify, and classify responses & evidence accurately, at scale.</span></li>
-              <li><i class="bi bi-check"></i><span>Transition from automated collection to autonomous analysis.</span></li>
-              <li><i class="bi bi-check"></i> <span>Reduce effort, reuse evidence, and automatically crosswalk.</span></li>
-            </ul>
-          </div>
-        </div><!-- Features Item -->
-
-        <div class="row gy-4 align-items-center features-item">
-          <div class="col-md-7 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out">
-            <img src="assets/img/uno/business_resilience.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-md-5 order-2 order-md-1" data-aos="fade-up">
-            <h3>Enable Business Resilience</h3>
-            <p class="fst-italic">
-              Robust governance, risk management, and compliance. Ensure business resilience, reduce costs, and improve operational efficiency.
-            </p>
-            <p>
-              Use AI Agents for comprehensive, accurate, and integrated risk management and business impact analysis. Ensure continuity and resilience with confidence.
-            </p>
-          </div>
-        </div><!-- Features Item -->
-
-      </div>
-
-    </section><!-- /Features Section -->
-
-  </main>
-
-  <footer id="footer" class="footer light-background">
-
-    <!-- <div class="footer-newsletter">
-      <div class="container">
-        <div class="row justify-content-center text-center">
-          <div class="col-lg-6">
-            <h4>Join Our Newsletter</h4>
-            <p><a href="https://share.hsforms.com/1UVlZRJVrTAuLMpcbB8SSSwqydzx" target="_blank" class="btn-get-started">Get the Uno Advantage!</a></p>
-            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-            <form action="forms/newsletter.php" method="post" class="php-email-form">
-              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-3 col-md-6 footer-about">
-          <a href="index.html" class="d-flex align-items-center">
-            <span class="sitename">UNO.AI</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>655 Castro St. Suite 4</p>
-            <p>Mountain View, CA 94041, USA</p>
-            <!-- <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p> -->
-            <p><strong>Email:</strong> <span>contact@uno.ai</span></p>
-          </div>
-          <div class="col-lg-6 col-md-12">
-            <div class="social-links d-flex">
-              <a href="https://www.linkedin.com/company/unoai/" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
-              <a href="https://blog.uno.ai" class="medium" target="_blank"><i class="bi bi-medium"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="uno-compliance.html" target="_blank">Compliance</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="terms-of-service.html" target="_blank">Terms of Service</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="privacy-policy.html" target="_blank">Privacy Policy</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="https://grc-glossary.uno.ai" target="_blank">GRC
-              Glossary</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Uno Solutions</h4>
-          <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#" >Banking & Fintech</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#" >Healthcare & Life Sciences</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#" >Fortune 2000</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#" >Managed Services</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-4">
-          <div class="d-flex flex-row">
-            <div class="col-lg-4 col-md-4"><img class="img-fluid" alt=""
-                src="assets/img/uno/aicpa_soc2_type_11.png" />
-            </div>
-            <div class="col-lg-4 col-md-4"><img class="img-fluid" alt="" src="assets/img/uno/iso_27001_2022.png" />
-            </div>
-            <div class="col-lg-4 col-md-4"><img class="img-fluid" alt=""
-                src="assets/img/uno/secure_ai_logo.png" /></div>
-          </div>
-        </div>
-
+      <div class="footer-col">
+        <h4>Industries</h4>
+        <ul>
+          <li><a href="banking-and-fintech.html">Banking & Fintech</a></li>
+          <li><a href="healthcare-and-life-sciences.html">Healthcare & Life Sciences</a></li>
+          <li><a href="fortune-2000.html">Fortune 2000</a></li>
+          <li><a href="managed-services.html">Managed Services</a></li>
+        </ul>
       </div>
     </div>
-
-    <div class="container copyright text-center mt-4">
-      <!-- <div class="copyright"> -->
-        &copy; Copyright <strong><span>Uno.ai, Inc.</span></strong> All Rights Reserved
-      <!-- </div> -->
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-certs">
+      <div class="footer-cert">
+        <div class="footer-cert-icon soc2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <div class="footer-cert-label"><strong>SOC 2 Type II</strong>Attested</div>
+      </div>
+      <div class="footer-cert">
+        <div class="footer-cert-icon iso">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div class="footer-cert-label"><strong>ISO 27001 : 2022</strong>Certified</div>
+      </div>
+      <div class="footer-cert">
+        <div class="footer-cert-icon secai">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4c0 2 1 3 2 4l-5 8h14l-5-8c1-1 2-2 2-4a4 4 0 0 0-4-4z"/><circle cx="12" cy="6" r="1.5" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <div class="footer-cert-label"><strong>Secure AI</strong>Verified</div>
+      </div>
+      <div class="footer-cert">
+        <div class="footer-cert-icon privacy">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg>
+        </div>
+        <div class="footer-cert-label"><strong>Data Privacy</strong>GDPR · CCPA Compliant</div>
+      </div>
+      <div class="footer-cert">
+        <div class="footer-cert-icon resilience">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="footer-cert-label"><strong>Resilience</strong>BCP Verified</div>
+      </div>
+      <div class="footer-cert">
+        <div class="footer-cert-icon txramp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><rect x="9" y="12" width="6" height="8"/><path d="M9 12h6"/><path d="M12 3v4"/></svg>
+        </div>
+        <div class="footer-cert-label"><strong>TX-RAMP Level 2</strong>Texas Certified</div>
+      </div>
     </div>
+    <div class="footer-bottom-line">
+      <span class="footer-copy">&copy; 2026 Uno AI, Inc. All Rights Reserved.</span>
+      <div class="footer-legal">
+        <a href="uno-compliance.html">Compliance</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="https://grc-glossary.uno.ai" target="_blank">GRC Glossary</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
-  </footer>
+<!-- Scroll Top -->
+<button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+  &#8593;
+</button>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<script>
+// ── Initialize Lucide icons ──
+lucide.createIcons();
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+// ── Cycling word in hero ──
+const words = ['risk','compliance','governance','resilience','audit'];
+let idx = 0;
+const el = document.getElementById('cycling');
+setInterval(() => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(6px)';
+  el.style.transition = 'opacity 0.22s, transform 0.22s';
+  setTimeout(() => {
+    idx = (idx + 1) % words.length;
+    el.textContent = words[idx];
+    el.style.opacity = '1';
+    el.style.transform = 'translateY(0)';
+  }, 240);
+}, 2600);
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+// ── Scroll-triggered fade-ins ──
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.07 });
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+[
+  ...document.querySelectorAll('.platform-row'),
+  ...document.querySelectorAll('.arch-col'),
+  ...document.querySelectorAll('.num-block'),
+  ...document.querySelectorAll('.ind-card'),
+  ...document.querySelectorAll('.q-item'),
+  ...document.querySelectorAll('.fw-col'),
+  ...document.querySelectorAll('.service-card'),
+  ...document.querySelectorAll('.feature-row'),
+  ...document.querySelectorAll('.about-grid'),
+].forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(18px)';
+  el.style.transition = 'opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1)';
+  io.observe(el);
+});
 
+// ── Scroll to top button ──
+const scrollBtn = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', () => {
+  scrollBtn.classList.toggle('visible', window.scrollY > 400);
+});
+scrollBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ── Mobile nav ──
+const mobileNav = document.getElementById('mobileNav');
+const mobileToggle = document.querySelector('.mobile-nav-toggle');
+const mobileClose = document.querySelector('.mobile-nav-close button');
+
+if (mobileToggle) {
+  mobileToggle.addEventListener('click', () => mobileNav.classList.add('active'));
+}
+if (mobileClose) {
+  mobileClose.addEventListener('click', () => mobileNav.classList.remove('active'));
+}
+mobileNav.addEventListener('click', (e) => {
+  if (e.target === mobileNav) mobileNav.classList.remove('active');
+});
+</script>
 </body>
-
 </html>
