@@ -282,7 +282,6 @@
 .surface-dark3 p { color: var(--on-light-md, rgba(11,11,11,0.68)); }
 .surface-dark3 h2, .surface-dark3 h3, .surface-dark3 h4 { color: var(--on-light, #0b0b0b); }
 .surface-dark3 .rule-dark { border-color: var(--rule-light, rgba(11,11,11,0.12)) !important; }
-}
 
 /* ─── DARK SURFACES — Deep navy-ink inspired by proposal design ─── */
 .surface-dark {
@@ -726,6 +725,11 @@
 .section-kicker.k-amber::after { background: var(--amber, #c17f3a); }
 
 /* ─── MOBILE NAV ─── */
+/* Switch to hamburger at 1100px instead of 680px — 6 nav items overflow at tablet widths */
+@media (max-width: 1100px) {
+  .nav-links { display: none !important; }
+  .mobile-nav-toggle { display: block !important; }
+}
 .mobile-nav-panel {
   border-left: 3px solid transparent;
   border-image: linear-gradient(180deg, var(--teal, #00b8ad), var(--sage, #4e7d71), transparent 80%) 1;
