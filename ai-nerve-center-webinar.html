@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SOX Compliance - uno.ai</title>
-<meta name="description" content="Automated Sarbanes-Oxley compliance. Streamline ICFR documentation, control testing, deficiency tracking, and SOX 302/404/906 requirements with AI-powered automation.">
+<title>Live Tour: Governing AI Across the Enterprise, May 20 - uno.ai</title>
+<meta name="description" content="Wednesday, May 20 at 11:00 AM ET. A 60-minute live tour of AI Nerve Center: Uno's new AI Governance module covering all eight Gartner AI Governance Platform pillars.">
 
 <!-- Favicons -->
 <link rel="icon" type="image/svg+xml" href="assets/img/uno/favicon.svg">
@@ -19,7 +19,7 @@
 <script src="https://unpkg.com/lucide@latest"></script>
 <link rel="stylesheet" href="assets/css/enhancements.css">
 <style>
-/* ─── DESIGN TOKENS ─── */
+/* --- DESIGN TOKENS --- */
 :root {
   --ink:#0b0b0b; --ink-2:#141414; --ink-3:#1c1c1c;
   --paper:#faf9f7; --paper-2:#f3f1ed; --white:#ffffff;
@@ -35,19 +35,19 @@
   --sage:#4e7d71; --sage-lt:rgba(78,125,113,0.1);
   --amber:#c17f3a; --amber-lt:rgba(193,127,58,0.1);
   --teal:#00b8ad; --teal-lt:rgba(0,184,173,0.12);
-  --unored-md:#b00808;
+  --unored:#ff0c0a; --unored-md:#b00808;
   --blue:#3b82f6; --blue-dim:rgba(59,130,246,0.12);
   --violet:#7c3aed; --violet-dim:rgba(124,58,237,0.10);
   --radius:4px; --radius-lg:8px;
 }
 
-/* ─── RESET ─── */
+/* --- RESET --- */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;overflow-x:hidden;background:var(--white);color:var(--on-light)}
 img{max-width:100%;height:auto}
 
-/* ─── SURFACES ─── */
+/* --- SURFACES --- */
 .surface-dark{background:var(--ink);color:var(--on-dark)}
 .surface-dark2{background:var(--ink-2);color:var(--on-dark)}
 .surface-dark3{background:var(--ink-3);color:var(--on-dark)}
@@ -55,7 +55,7 @@ img{max-width:100%;height:auto}
 .surface-paper2{background:var(--paper-2);color:var(--on-light)}
 .surface-white{background:var(--white);color:var(--on-light)}
 
-/* ─── ANNOUNCEMENT STRIP ─── */
+/* --- ANNOUNCEMENT STRIP --- */
 .strip{position:relative;padding:12px 20px;text-align:center;overflow:hidden;background:var(--ink)}
 .strip::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,184,173,0.15) 0%,rgba(78,125,113,0.08) 25%,rgba(124,58,237,0.1) 50%,rgba(59,130,246,0.1) 75%,rgba(0,184,173,0.15) 100%);background-size:200% 100%;animation:strip-shimmer 8s ease-in-out infinite}
 @keyframes strip-shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
@@ -66,7 +66,7 @@ img{max-width:100%;height:auto}
 .strip-cta{color:var(--teal);font-weight:500;display:inline-flex;align-items:center;gap:4px;transition:gap 0.2s}
 .strip a:hover .strip-cta{gap:7px}
 
-/* ─── NAV ─── */
+/* --- NAV --- */
 .main-nav{position:sticky;top:0;z-index:200;height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 52px;background:rgba(255,255,255,0.94);border-bottom:1px solid var(--rule-light);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
 .nav-logo{text-decoration:none;display:flex;align-items:center;gap:8px;transition:opacity 0.2s}
 .nav-logo:hover{opacity:0.8}
@@ -85,16 +85,11 @@ img{max-width:100%;height:auto}
 .nav-dropdown-item:hover{background:var(--paper-2)}
 .dropdown-icon{width:36px;height:36px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .dropdown-icon svg{width:18px;height:18px;stroke-width:1.75}
-.dropdown-icon.i-teal{background:rgba(0,184,173,0.1)}
-.dropdown-icon.i-teal svg{stroke:var(--teal)}
-.dropdown-icon.i-sage{background:rgba(78,125,113,0.1)}
-.dropdown-icon.i-sage svg{stroke:var(--sage)}
-.dropdown-icon.i-amber{background:rgba(193,127,58,0.1)}
-.dropdown-icon.i-amber svg{stroke:var(--amber)}
-.dropdown-icon.i-violet{background:rgba(124,58,237,0.1)}
-.dropdown-icon.i-violet svg{stroke:var(--violet)}
-.dropdown-icon.i-ink{background:rgba(11,11,11,0.08)}
-.dropdown-icon.i-ink svg{stroke:var(--ink)}
+.dropdown-icon.i-teal{background:rgba(0,184,173,0.1)}.dropdown-icon.i-teal svg{stroke:var(--teal)}
+.dropdown-icon.i-sage{background:rgba(78,125,113,0.1)}.dropdown-icon.i-sage svg{stroke:var(--sage)}
+.dropdown-icon.i-amber{background:rgba(193,127,58,0.1)}.dropdown-icon.i-amber svg{stroke:var(--amber)}
+.dropdown-icon.i-violet{background:rgba(124,58,237,0.1)}.dropdown-icon.i-violet svg{stroke:var(--violet)}
+.dropdown-icon.i-ink{background:rgba(11,11,11,0.08)}.dropdown-icon.i-ink svg{stroke:var(--ink)}
 .dropdown-title{font-size:14px;font-weight:500;color:var(--on-light);margin-bottom:2px}
 .dropdown-desc{font-size:12px;font-weight:300;color:var(--on-light-md);line-height:1.4}
 
@@ -116,126 +111,144 @@ img{max-width:100%;height:auto}
 .nav-cta:hover{opacity:0.84;transform:translateY(-1px)}
 .mobile-nav-toggle{display:none;cursor:pointer;font-size:22px;color:var(--on-light);background:none;border:none}
 
-/* ─── BREADCRUMB ─── */
+/* --- BREADCRUMB --- */
 .breadcrumb-bar{padding:14px 52px;border-bottom:1px solid var(--rule-light);background:var(--paper);display:flex;align-items:center;gap:8px}
 .breadcrumb-bar a,.breadcrumb-bar span{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--on-light-dim);text-decoration:none;transition:color 0.18s}
 .breadcrumb-bar a:hover{color:var(--on-light-md)}
 .breadcrumb-bar .current{color:var(--on-light-md)}
 
-/* ─── HERO ─── */
-.page-hero{padding:96px 52px 88px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;max-width:1360px;margin:0 auto}
-.ph-kicker{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--sage);margin-bottom:28px;display:flex;align-items:center;gap:12px}
-.ph-kicker::before{content:'';width:28px;height:1.5px;background:linear-gradient(90deg,var(--teal),var(--sage));border-radius:2px}
-.page-hero h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(52px,7vw,96px);line-height:0.94;letter-spacing:-0.03em;color:var(--on-light)}
-.dim-i{font-style:italic;color:var(--on-light-md)}
-
-.ph-desc{font-size:17px;font-weight:300;color:var(--on-light-md);line-height:1.82;margin-bottom:32px}
-.ph-stats{display:flex;gap:32px;padding-top:28px;border-top:1px solid var(--rule-light)}
-.ph-stat-val{font-family:'Instrument Serif',serif;font-size:32px;color:var(--on-light);line-height:1;letter-spacing:-0.02em;display:block}
-.ph-stat-val .a{color:var(--sage)}
-.ph-stat-val .sa{color:var(--amber)}
-.ph-stat-lbl{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--on-light-dim);margin-top:6px;display:block}
-
-/* ─── COMMON SECTION PATTERNS ─── */
-.section-pad{padding:100px 52px;max-width:1360px;margin:0 auto}
-.section-header-2col{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-bottom:72px;align-items:end}
-
-.section-h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(44px,5.5vw,72px);line-height:0.96;letter-spacing:-0.025em}
-.section-h2 .dim{font-style:italic;color:var(--on-dark-md)}
-.section-h2.on-light .dim{color:var(--on-light-md)}
-
-.section-kicker{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:24px}
-.section-kicker::before{content:'';width:20px;height:1.5px;border-radius:2px}
-.section-kicker.k-teal{color:var(--teal)}.section-kicker.k-teal::before{background:var(--teal)}
-.section-kicker.k-sage{color:var(--sage)}.section-kicker.k-sage::before{background:var(--sage)}
-.section-kicker.k-amber{color:var(--amber)}.section-kicker.k-amber::before{background:var(--amber)}
-
-/* ─── BUTTONS ─── */
+/* --- BUTTONS --- */
 .btn-solid-ink{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--on-dark);font-size:14.5px;font-weight:500;padding:13px 26px;border-radius:var(--radius);text-decoration:none;transition:opacity 0.18s,transform 0.18s}
 .btn-solid-ink:hover{opacity:0.86;transform:translateY(-1px)}
 .btn-ghost-light{display:inline-flex;align-items:center;gap:7px;color:var(--on-light-md);font-size:14.5px;text-decoration:none;padding:13px 0;border-bottom:1px solid var(--rule-light);transition:color 0.18s,border-color 0.18s}
 .btn-ghost-light:hover{color:var(--on-light);border-bottom-color:var(--on-light-md)}
-.btn-solid-white{display:inline-flex;align-items:center;gap:8px;background:var(--on-dark);color:var(--ink);font-size:14.5px;font-weight:500;padding:13px 26px;border-radius:var(--radius);text-decoration:none;transition:opacity 0.18s,transform 0.18s}
-.btn-solid-white:hover{opacity:0.8;transform:translateY(-1px)}
-.btn-ghost-dark{display:inline-flex;align-items:center;gap:7px;color:var(--on-dark-md);font-size:14.5px;text-decoration:none;padding:13px 0;border-bottom:1px solid var(--rule-dark);transition:color 0.18s,border-color 0.18s}
-.btn-ghost-dark:hover{color:var(--on-dark);border-bottom-color:var(--on-dark-md)}
 
-/* ─── MARQUEE ─── */
-.marquee-wrap{border-top:1px solid rgba(0,184,173,0.15);border-bottom:1px solid rgba(0,184,173,0.15);padding:18px 0;overflow:hidden}
-.marquee-track{display:flex;white-space:nowrap;animation:marquee 28s linear infinite}
-.marquee-track:hover{animation-play-state:paused}
-@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.m-item{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.72);padding:0 36px;flex-shrink:0;display:flex;align-items:center;gap:36px}
-.m-item::after{content:'·';font-size:16px;color:var(--teal);opacity:0.6}
+/* --- SECTION PATTERNS --- */
+.section-pad{padding:100px 52px;max-width:1360px;margin:0 auto}
+.section-kicker{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:24px}
+.section-kicker::before{content:'';width:20px;height:1.5px;border-radius:2px}
+.section-kicker.k-teal{color:var(--teal)}.section-kicker.k-teal::before{background:var(--teal)}
+.section-kicker.k-sage{color:var(--sage)}.section-kicker.k-sage::before{background:var(--sage)}
+.section-kicker.k-violet{color:var(--violet)}.section-kicker.k-violet::before{background:var(--violet)}
+.section-kicker.k-amber{color:var(--amber)}.section-kicker.k-amber::before{background:var(--amber)}
+.section-h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(44px,5.5vw,72px);line-height:0.96;letter-spacing:-0.025em}
+.section-h2 .dim{font-style:italic;color:var(--on-dark-md)}
+.section-h2.on-light .dim{color:var(--on-light-md)}
 
-/* ─── NUMBERED ROWS ─── */
-.cap-rows{display:flex;flex-direction:column}
-.cap-row{display:grid;grid-template-columns:52px 1fr 1.2fr 100px;gap:40px;align-items:start;padding:34px 0;border-top:1px solid var(--rule-dark);position:relative;cursor:default;text-decoration:none;color:inherit;transition:background 0.18s}
-.cap-row:last-child{border-bottom:1px solid var(--rule-dark)}
-.cap-row::before{content:'';position:absolute;inset:0 -52px;background:rgba(255,255,255,0.03);opacity:0;transition:opacity 0.18s}
-.cap-row:hover::before{opacity:1}
-.cap-num{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:0.08em;color:var(--teal);padding-top:4px;position:relative;z-index:1}
-.cap-title{font-family:'Instrument Serif',serif;font-size:26px;font-weight:400;color:var(--on-dark);letter-spacing:-0.015em;line-height:1.1;position:relative;z-index:1}
-.cap-desc{font-size:14.5px;color:var(--on-dark-md);line-height:1.7;font-weight:300;position:relative;z-index:1}
-.cap-tag{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:5px 10px;border-radius:2px;position:relative;z-index:1;align-self:flex-start;margin-top:4px;white-space:nowrap;color:var(--teal);border:1px solid rgba(0,184,173,0.2);background:rgba(0,184,173,0.06)}
+/* --- WEBINAR HERO --- */
+.web-hero{padding:80px 52px 60px;max-width:1360px;margin:0 auto}
+.web-hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:72px;align-items:start}
+.wh-kicker{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--violet);margin-bottom:28px;display:inline-flex;align-items:center;gap:12px}
+.wh-kicker::before{content:'';width:24px;height:1.5px;background:linear-gradient(90deg,var(--violet),var(--teal));border-radius:2px}
+.wh-live-pip{width:7px;height:7px;border-radius:50%;background:var(--unored);box-shadow:0 0 0 0 rgba(255,12,10,0.4);animation:pulse 1.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,12,10,0.5)}70%{box-shadow:0 0 0 8px rgba(255,12,10,0)}100%{box-shadow:0 0 0 0 rgba(255,12,10,0)}}
 
-.cap-row.light{border-top-color:var(--rule-light)}
-.cap-row.light:last-child{border-bottom-color:var(--rule-light)}
-.cap-row.light::before{background:var(--paper-2)}
-.cap-row.light .cap-num{color:var(--sage)}
-.cap-row.light .cap-title{color:var(--on-light)}
-.cap-row.light .cap-desc{color:var(--on-light-md)}
-.cap-row.light .cap-tag{color:var(--sage);border-color:rgba(78,125,113,0.25);background:rgba(78,125,113,0.06)}
+.wh-left h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(46px,6vw,84px);line-height:0.98;letter-spacing:-0.025em;color:var(--on-light);margin-bottom:28px}
+.wh-left h1 .dim{font-style:italic;color:var(--on-light-md)}
+.wh-left h1 .accent{font-style:italic;color:var(--violet)}
 
-/* ─── FEATURE GRID ─── */
-.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule-dark)}
-.feat-card{background:var(--ink);padding:44px;transition:background 0.18s}
-.feat-card:hover{background:var(--ink-2)}
-.feat-bar{display:block;width:24px;height:2px;border-radius:2px;margin-bottom:20px}
-.feat-bar.teal{background:var(--teal)}.feat-bar.sage{background:var(--sage)}.feat-bar.amber{background:var(--amber)}.feat-bar.violet{background:var(--violet)}
-.feat-num{font-family:'DM Mono',monospace;font-size:11px;color:var(--on-dark-dim);letter-spacing:0.1em;display:block;margin-bottom:14px}
-.feat-card h3{font-family:'Instrument Serif',serif;font-size:24px;font-weight:400;color:var(--on-dark);letter-spacing:-0.015em;margin-bottom:12px;line-height:1.15}
-.feat-card p{font-size:14.5px;font-weight:300;color:var(--on-dark-md);line-height:1.75}
+.wh-lead{font-size:17px;font-weight:300;color:var(--on-light-md);line-height:1.75;max-width:560px;margin-bottom:36px}
 
-/* ─── PROOF BAND ─── */
-.proof-band{padding:88px 52px}
-.proof-inner{max-width:1360px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.proof-block{padding:0 40px;border-right:1px solid var(--rule-dark)}
-.proof-block:first-child{padding-left:0}
-.proof-block:last-child{border-right:none;padding-right:0}
-.proof-val{font-family:'Instrument Serif',serif;font-size:clamp(48px,5.5vw,80px);font-weight:400;color:var(--on-dark);line-height:1;letter-spacing:-0.03em;display:block;margin-bottom:14px}
-.proof-val .a{color:var(--teal)}.proof-val .sa{color:var(--amber)}
-.proof-label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sage);display:block;margin-bottom:10px}
-.proof-desc{font-size:14.5px;font-weight:300;color:var(--on-dark-md);line-height:1.65}
+.wh-meta{display:grid;grid-template-columns:repeat(3,auto);gap:36px;padding-top:28px;border-top:1px solid var(--rule-light);margin-bottom:36px;max-width:560px}
+.wh-meta-item{display:flex;flex-direction:column;gap:6px}
+.wh-meta-lbl{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--on-light-dim)}
+.wh-meta-val{font-family:'Instrument Serif',serif;font-size:22px;color:var(--on-light);line-height:1.1;letter-spacing:-0.01em}
+.wh-meta-val .small{font-size:14px;color:var(--on-light-md);font-style:italic}
 
-.proof-band.light .proof-block{border-right-color:var(--rule-light)}
-.proof-band.light .proof-val{color:var(--on-light)}
-.proof-band.light .proof-label{color:var(--sage)}
-.proof-band.light .proof-desc{color:var(--on-light-md)}
+.wh-bullets{list-style:none;display:flex;flex-direction:column;gap:12px;max-width:560px}
+.wh-bullets li{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--on-light-md);line-height:1.65}
+.wh-bullets li .bcheck{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--violet-dim);color:var(--violet);display:flex;align-items:center;justify-content:center;margin-top:1px}
+.wh-bullets li:nth-child(1) .bcheck{background:rgba(0,184,173,0.12);color:var(--teal)}
+.wh-bullets li:nth-child(3) .bcheck{background:rgba(193,127,58,0.12);color:var(--amber)}
+.wh-bullets li:nth-child(4) .bcheck{background:rgba(59,130,246,0.12);color:var(--blue)}
+.wh-bullets li .bcheck svg{width:11px;height:11px;stroke-width:2.5}
 
-/* ─── FRAMEWORKS TABLE ─── */
-.fw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
-.fw-col{padding:0 40px;border-right:1px solid var(--rule-dark)}
-.fw-col:first-child{padding-left:0}
-.fw-col:last-child{border-right:none;padding-right:0}
-.fw-col-label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;display:block;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--rule-dark)}
-.fw-col:nth-child(1) .fw-col-label{color:var(--teal)}
-.fw-col:nth-child(2) .fw-col-label{color:var(--amber)}
-.fw-col:nth-child(3) .fw-col-label{color:var(--blue)}
-.fw-tag{font-size:14.5px;font-weight:300;color:var(--on-dark-md);padding:9px 0;border-bottom:1px solid var(--rule-dark);display:block;transition:color 0.14s;cursor:default}
-.fw-tag:last-child{border-bottom:none}
-.fw-tag:hover{color:var(--on-dark)}
+/* --- REGISTRATION CARD --- */
+.reg-card{background:var(--white);border:1px solid var(--rule-light);border-radius:var(--radius-lg);overflow:hidden;position:sticky;top:84px;box-shadow:0 24px 60px rgba(11,11,11,0.06);padding:36px 32px 32px}
+.reg-card::before{content:'';display:block;height:3px;margin:-36px -32px 28px;background:linear-gradient(90deg,var(--violet),var(--teal),var(--amber));border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+.reg-card .reg-label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--violet);display:inline-flex;align-items:center;gap:8px;margin-bottom:12px}
+.reg-card h3{font-family:'Instrument Serif',serif;font-size:28px;font-weight:400;letter-spacing:-0.015em;color:var(--on-light);line-height:1.15;margin-bottom:20px}
+.reg-card h3 .dim{font-style:italic;color:var(--on-light-md)}
+.reg-card .reg-details{display:flex;flex-direction:column;gap:16px;margin-bottom:28px;padding:20px 0;border-top:1px solid var(--rule-light);border-bottom:1px solid var(--rule-light)}
+.reg-card .reg-detail{display:flex;align-items:center;gap:12px;font-size:15px;color:var(--on-light-md)}
+.reg-card .reg-detail svg{width:18px;height:18px;stroke:var(--violet);flex-shrink:0}
+.reg-card .reg-detail strong{color:var(--on-light);font-weight:500}
+.reg-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:var(--ink);color:var(--on-dark);font-family:'DM Sans',sans-serif;font-size:16px;font-weight:500;padding:16px 28px;border-radius:var(--radius);text-decoration:none;transition:opacity 0.18s,transform 0.18s}
+.reg-btn:hover{opacity:0.86;transform:translateY(-1px)}
+.reg-btn svg{width:16px;height:16px}
+.reg-card .reg-note{font-size:13px;color:var(--on-light-dim);margin-top:16px;line-height:1.6;text-align:center}
+.reg-card .reg-encore{margin-top:20px;padding:14px 16px;background:var(--paper);border-radius:var(--radius);display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--on-light-md)}
+.reg-card .reg-encore strong{color:var(--on-light);font-weight:500}
 
-/* ─── QUOTE / TESTIMONIAL ─── */
-.quote-section{padding:120px 52px;max-width:1360px;margin:0 auto}
-.quote-kicker{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:44px;display:block}
-.quote-section blockquote{font-family:'Instrument Serif',serif;font-size:clamp(24px,3.5vw,48px);font-weight:400;font-style:italic;color:var(--on-dark-md);line-height:1.28;letter-spacing:-0.02em;max-width:880px;margin-bottom:32px}
-.quote-section blockquote strong{color:var(--on-dark);font-style:normal}
-.q-attr{display:flex;align-items:center;gap:16px}
-.q-rule{width:32px;height:1px;background:var(--rule-dark)}
-.q-who{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--on-dark-dim)}
+/* --- AGENDA --- */
+.agenda-list{margin-top:48px}
+.agenda-row{display:grid;grid-template-columns:100px 1fr 2fr 100px;gap:32px;align-items:start;padding:28px 0;border-top:1px solid var(--rule-light)}
+.agenda-row:last-child{border-bottom:1px solid var(--rule-light)}
+.ar-time{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:0.08em;color:var(--violet);padding-top:5px}
+.ar-title{font-family:'Instrument Serif',serif;font-size:22px;font-weight:400;color:var(--on-light);letter-spacing:-0.01em;line-height:1.2}
+.ar-desc{font-size:14.5px;color:var(--on-light-md);line-height:1.7;font-weight:300}
+.ar-tag{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;padding:5px 10px;border-radius:2px;align-self:flex-start;white-space:nowrap;margin-top:4px;color:var(--teal);border:1px solid rgba(0,184,173,0.25);background:rgba(0,184,173,0.06)}
+.ar-tag.violet{color:var(--violet);border-color:rgba(124,58,237,0.25);background:rgba(124,58,237,0.05)}
+.ar-tag.amber{color:var(--amber);border-color:rgba(193,127,58,0.25);background:rgba(193,127,58,0.05)}
 
-/* ─── CTA SECTION ─── */
+/* --- SPEAKERS --- */
+.speakers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px}
+.speaker-card{padding:0 32px;border-right:1px solid var(--rule-dark)}
+.speaker-card:first-child{padding-left:0}
+.speaker-card:last-child{border-right:none;padding-right:0}
+.sp-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--teal));margin-bottom:22px;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:22px;color:var(--on-dark);letter-spacing:-0.02em}
+.speaker-card:nth-child(2) .sp-avatar{background:linear-gradient(135deg,var(--teal),var(--amber))}
+.speaker-card:nth-child(3) .sp-avatar{background:linear-gradient(135deg,var(--amber),var(--unored-md))}
+.speaker-card:nth-child(4) .sp-avatar{background:linear-gradient(135deg,var(--blue),var(--violet))}
+.sp-role{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--violet);margin-bottom:8px;display:block}
+.speaker-card:nth-child(2) .sp-role{color:var(--teal)}
+.speaker-card:nth-child(3) .sp-role{color:var(--amber)}
+.speaker-card:nth-child(4) .sp-role{color:var(--blue)}
+.sp-name{font-family:'Instrument Serif',serif;font-size:22px;font-weight:400;color:var(--on-dark);letter-spacing:-0.01em;margin-bottom:4px;line-height:1.2}
+.sp-title{font-size:13.5px;color:var(--on-dark-md);font-weight:300;line-height:1.5;margin-bottom:14px}
+.sp-bio{font-size:13.5px;color:var(--on-dark-md);line-height:1.7;font-weight:300}
+
+/* --- WHAT YOU'LL SEE --- */
+.see-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.see-list{display:flex;flex-direction:column;gap:22px}
+.see-item{display:grid;grid-template-columns:32px 1fr;gap:16px;align-items:start;padding:20px 0;border-top:1px solid var(--rule-light)}
+.see-item:last-child{border-bottom:1px solid var(--rule-light)}
+.see-item-num{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:0.08em;color:var(--violet);padding-top:4px}
+.see-item h4{font-family:'Instrument Serif',serif;font-size:19px;font-weight:400;letter-spacing:-0.01em;color:var(--on-light);margin-bottom:4px}
+.see-item p{font-size:14px;font-weight:300;color:var(--on-light-md);line-height:1.7}
+
+.see-mock{background:var(--ink-2);border:1px solid var(--rule-dark);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 24px 60px rgba(11,11,11,0.10)}
+.see-mock-bar{display:flex;align-items:center;gap:8px;padding:14px 18px;border-bottom:1px solid var(--rule-dark);background:rgba(255,255,255,0.03)}
+.see-mock-bar .dot{width:9px;height:9px;border-radius:50%}
+.see-mock-bar .dot:nth-child(1){background:rgba(255,69,58,0.7)}
+.see-mock-bar .dot:nth-child(2){background:rgba(255,159,10,0.7)}
+.see-mock-bar .dot:nth-child(3){background:rgba(50,215,75,0.7)}
+.see-mock-bar .label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--on-dark-dim);margin-left:12px}
+.see-mock-body{padding:28px;display:flex;flex-direction:column;gap:16px;font-family:'DM Mono',monospace;font-size:12px}
+.see-row{display:grid;grid-template-columns:1fr auto;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+.see-row:last-child{border-bottom:none}
+.see-row-label{display:flex;align-items:center;gap:12px;color:var(--on-dark-md)}
+.see-row-label .pip{width:8px;height:8px;border-radius:2px}
+.see-row-label .pip.t{background:var(--teal)}
+.see-row-label .pip.v{background:var(--violet)}
+.see-row-label .pip.a{background:var(--amber)}
+.see-row-label .pip.r{background:var(--unored)}
+.see-row-val{font-size:10.5px;letter-spacing:0.08em;color:var(--on-dark-dim);text-transform:uppercase}
+.see-row-val.ok{color:var(--teal)}
+.see-row-val.warn{color:var(--amber)}
+.see-row-val.crit{color:var(--unored)}
+
+/* --- FAQ --- */
+.faq-list{margin-top:40px;max-width:860px}
+.faq-item{border-top:1px solid var(--rule-light);padding:24px 0}
+.faq-item:last-child{border-bottom:1px solid var(--rule-light)}
+.faq-q{font-family:'Instrument Serif',serif;font-size:22px;font-weight:400;color:var(--on-light);letter-spacing:-0.01em;margin-bottom:10px;cursor:pointer;display:flex;align-items:flex-start;justify-content:space-between;gap:24px;transition:color 0.18s}
+.faq-q::after{content:'+';font-family:'DM Mono',monospace;color:var(--on-light-dim);font-size:22px;flex-shrink:0;transition:transform 0.2s}
+.faq-item.open .faq-q::after{content:'\2212'}
+.faq-a{font-size:15px;color:var(--on-light-md);line-height:1.8;font-weight:300;max-height:0;overflow:hidden;transition:max-height 0.3s ease,margin-top 0.3s ease}
+.faq-item.open .faq-a{max-height:400px;margin-top:8px}
+
+/* --- CTA SECTION --- */
 .cta-section{border-top:1px solid var(--rule-light);padding:140px 52px;text-align:center;position:relative;overflow:hidden;background:var(--white)}
 .cta-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:320px;background:radial-gradient(ellipse,rgba(78,125,113,0.08) 0%,transparent 70%);pointer-events:none}
 .cta-inner{position:relative;z-index:1;max-width:680px;margin:0 auto}
@@ -245,8 +258,9 @@ img{max-width:100%;height:auto}
 .cta-actions{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap}
 .cta-trust{display:flex;align-items:center;justify-content:center;gap:28px;margin-top:44px;flex-wrap:wrap}
 .cta-trust span{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--on-light-dim);display:flex;align-items:center;gap:6px}
+.cta-trust span::before{content:'\2713';color:var(--sage)}
 
-/* ─── FOOTER ─── */
+/* --- FOOTER --- */
 .site-footer{background:var(--ink-3);border-top:1px solid var(--rule-dark);padding:60px 52px 36px}
 .footer-top{display:grid;grid-template-columns:260px 1fr;gap:80px;margin-bottom:52px;padding-bottom:52px;border-bottom:1px solid var(--rule-dark)}
 .footer-logo-f{font-family:'DM Mono',monospace;font-size:14px;font-weight:500;color:var(--on-dark);letter-spacing:0.06em;text-decoration:none;display:flex;align-items:center;gap:7px;margin-bottom:16px}
@@ -280,15 +294,20 @@ img{max-width:100%;height:auto}
 .footer-legal a{font-family:'DM Mono',monospace;font-size:11.5px;color:var(--on-dark-dim);text-decoration:none;transition:color 0.18s}
 .footer-legal a:hover{color:var(--on-dark)}
 
-/* ─── SCROLL TO TOP ─── */
+/* --- SCROLL TO TOP --- */
 .scroll-top-btn{position:fixed;bottom:28px;right:28px;width:40px;height:40px;background:var(--ink);color:var(--on-dark);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;z-index:100;opacity:0;visibility:hidden;transition:opacity 0.3s,visibility 0.3s,transform 0.18s;box-shadow:0 4px 16px rgba(0,0,0,0.15)}
 .scroll-top-btn.visible{opacity:1;visibility:visible}
 .scroll-top-btn:hover{transform:translateY(-2px)}
 
-/* ─── ANIMATIONS ─── */
+/* --- ANIMATIONS --- */
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.wh-kicker{animation:fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) both 0.08s}
+.wh-left h1{animation:fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) both 0.16s}
+.wh-lead{animation:fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) both 0.28s}
+.wh-meta,.wh-bullets{animation:fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) both 0.36s}
+.reg-card{animation:fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) both 0.20s}
 
-/* ─── MOBILE NAV ─── */
+/* --- MOBILE NAV --- */
 .mobile-nav-overlay{display:none;position:fixed;inset:0;z-index:300;background:rgba(0,0,0,0.4)}
 .mobile-nav-overlay.active{display:block}
 .mobile-nav-panel{position:fixed;top:0;right:0;bottom:0;width:300px;max-width:85vw;background:var(--white);padding:24px;z-index:301;overflow-y:auto;transform:translateX(100%);transition:transform 0.3s ease}
@@ -299,47 +318,43 @@ img{max-width:100%;height:auto}
 .mobile-nav-panel a:hover{color:var(--on-light)}
 .mobile-sub-label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--on-light-dim);padding-top:18px;padding-bottom:6px;border-bottom:none}
 
-/* ─── RESPONSIVE ─── */
+/* --- RESPONSIVE --- */
 @media(max-width:1100px){
   .main-nav,.site-footer{padding-left:28px;padding-right:28px}
   .breadcrumb-bar{padding:14px 28px}
-  .page-hero,.section-pad,.quote-section,.cta-section{padding-left:28px;padding-right:28px}
-  .proof-band{padding:72px 28px}
-  .page-hero{grid-template-columns:1fr;gap:44px;padding-top:72px}
-  .section-header-2col{grid-template-columns:1fr;gap:40px}
-  .cap-row{grid-template-columns:40px 1fr}
-  .cap-desc,.cap-tag{display:none}
-  .cap-row::before{inset:0 -28px}
-  .proof-inner{grid-template-columns:1fr 1fr}
-  .proof-block:nth-child(2){border-right:none}
-  .proof-block:nth-child(3){padding-left:0;border-top:1px solid var(--rule-dark);padding-top:40px;margin-top:40px}
-  .proof-block:nth-child(4){border-top:1px solid var(--rule-dark);padding-top:40px;margin-top:40px}
-  .feat-grid{grid-template-columns:1fr}
-  .fw-grid{grid-template-columns:1fr}
-  .fw-col{border-right:none;border-bottom:1px solid var(--rule-dark);padding:36px 0}
-  .fw-col:first-child{padding-left:0}
-  .fw-col:last-child{border-bottom:none}
+  .web-hero,.section-pad,.cta-section{padding-left:28px;padding-right:28px}
+  .web-hero{padding-top:50px;padding-bottom:60px}
+  .web-hero-grid{grid-template-columns:1fr;gap:48px}
+  .reg-card{position:static}
+  .speakers-grid{grid-template-columns:1fr 1fr;gap:36px}
+  .speaker-card{border-right:none;padding:0}
+  .see-grid{grid-template-columns:1fr;gap:48px}
+  .agenda-row{grid-template-columns:80px 1fr}
+  .ar-desc,.ar-tag{display:none}
   .footer-top{grid-template-columns:1fr;gap:40px}
   .footer-cols{grid-template-columns:1fr 1fr}
   .footer-certs{flex-wrap:wrap}
 }
 @media(max-width:680px){
-  .page-hero h1{font-size:46px}
   .nav-links{display:none}
   .mobile-nav-toggle{display:block}
-  .ph-stats{gap:20px;flex-wrap:wrap}
-  .proof-inner{grid-template-columns:1fr}
-  .proof-block{border-right:none;padding:0;border-top:1px solid var(--rule-dark);padding-top:36px;margin-top:36px}
-  .proof-block:first-child{border-top:none;padding-top:0;margin-top:0}
+  .wh-left h1{font-size:40px}
+  .wh-meta{grid-template-columns:1fr 1fr;gap:24px}
+  .speakers-grid{grid-template-columns:1fr;gap:36px}
+  .speaker-card{border-bottom:1px solid var(--rule-dark);padding-bottom:32px}
+  .speaker-card:last-child{border-bottom:none}
   .footer-cols{grid-template-columns:1fr 1fr}
   .footer-bottom-line{flex-direction:column;align-items:flex-start}
   .cta-inner h2{font-size:44px}
+  .web-hero{padding:36px 20px 40px}
 }
 </style>
 </head>
 <body>
 
-<!-- STRIP -->
+<!-- ==============================
+     STRIP
+============================== -->
 <div class="strip-wrap">
   <div class="strip" id="strip-anc">
     <a href="ai-governance.html">
@@ -358,7 +373,9 @@ img{max-width:100%;height:auto}
   <script>!function(){var s=document.getElementById('strip-anc'),a=document.getElementById('strip-azure');if(Math.random()<.5){s.style.display='none';a.style.display=''};}();</script>
 </div>
 
-<!-- NAV -->
+<!-- ==============================
+     NAV
+============================== -->
 <nav class="main-nav">
   <a class="nav-logo" href="index.html">
     <img src="assets/img/uno/unoai_logo.png" alt="uno.ai">
@@ -452,7 +469,7 @@ img{max-width:100%;height:auto}
     </div>
   </div>
   <div class="nav-right">
-    <a href="https://share.hsforms.com/1UVlZRJVrTAuLMpcbB8SSSwqydzx" target="_blank" class="nav-cta">Get a Demo</a>
+    <a href="#register" class="nav-cta">Register</a>
     <button class="mobile-nav-toggle" aria-label="Open menu">&#9776;</button>
   </div>
 </nav>
@@ -490,263 +507,305 @@ img{max-width:100%;height:auto}
   </div>
 </div>
 
-<!-- BREADCRUMB -->
+<!-- ==============================
+     BREADCRUMB
+============================== -->
 <div class="breadcrumb-bar">
   <a href="index.html">uno.ai</a><span> / </span>
-  <a href="state-of-art-ai-agents.html">Solutions</a><span> / </span>
-  <span class="current">SOX Compliance</span>
+  <a href="ai-governance.html">AI Governance</a><span> / </span>
+  <span class="current">Live Webinar</span>
 </div>
 
-<!-- ════════════════════════════════════════════
+<!-- ==============================
      HERO
-═════════════════════════════════════════════ -->
+============================== -->
 <div class="surface-white">
-  <div class="page-hero">
-    <div>
-      <div class="ph-kicker">SOX Compliance</div>
-      <h1>SOX compliance<br><span class="dim-i">without the drama</span></h1>
-    </div>
-    <div>
-      <p class="ph-desc">Sarbanes-Oxley compliance shouldn't consume your team for months every year. Uno automates ICFR documentation, control testing, deficiency tracking, and management assessments -- so your SOX program runs itself.</p>
-      <div class="ph-stats">
-        <div>
-          <span class="ph-stat-val">70<span class="a">%</span></span>
-          <span class="ph-stat-lbl">Less Effort</span>
+  <section class="web-hero">
+    <div class="web-hero-grid">
+      <div class="wh-left">
+        <div class="wh-kicker">
+          <span class="wh-live-pip"></span>
+          Live Webinar - 60 min
         </div>
-        <div>
-          <span class="ph-stat-val">100<span class="sa">%</span></span>
-          <span class="ph-stat-lbl">ICFR Coverage</span>
+        <h1>
+          Governing AI<br>
+          across the <span class="dim">enterprise.</span><br>
+          A live <span class="accent">tour.</span>
+        </h1>
+        <p class="wh-lead">
+          Join us for a 60-minute, end-to-end walkthrough of AI Nerve Center, Uno's new AI Governance module covering all eight Gartner AI Governance Platform pillars. Engineers and the product team at uno.ai will walk through real workflows on a live tenant, and we will be joined by customers, partners, and industry experts who will share live use cases, case studies, and pragmatic ways to approach AI governance.
+        </p>
+
+        <div class="wh-meta">
+          <div class="wh-meta-item">
+            <span class="wh-meta-lbl">Date</span>
+            <span class="wh-meta-val">Wed - May 20<br><span class="small">2026</span></span>
+          </div>
+          <div class="wh-meta-item">
+            <span class="wh-meta-lbl">Time</span>
+            <span class="wh-meta-val">11:00 AM ET<br><span class="small">8 AM PT - 4 PM BST</span></span>
+          </div>
+          <div class="wh-meta-item">
+            <span class="wh-meta-lbl">Format</span>
+            <span class="wh-meta-val">Live + Q&amp;A<br><span class="small">Replay sent after</span></span>
+          </div>
         </div>
-        <div>
-          <span class="ph-stat-val">Zero<span class="a"> MW</span></span>
-          <span class="ph-stat-lbl">Material Weaknesses</span>
+
+        <ul class="wh-bullets">
+          <li><span class="bcheck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Live inventory of a new GenAI use case, including embedded-AI SaaS and MCP connectors.</span></li>
+          <li><span class="bcheck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Auto-mapping the same use case to EU AI Act, ISO 42001, and NIST AI RMF.</span></li>
+          <li><span class="bcheck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Runtime policy enforcement on a live agent, including block, redact, and route-to-human decisions.</span></li>
+          <li><span class="bcheck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Audit-trail playback: reconstruct who approved what, on what evidence, in 60 seconds.</span></li>
+        </ul>
+      </div>
+
+      <!-- REGISTRATION CARD -->
+      <div class="reg-card" id="register">
+        <span class="reg-label">
+          <span class="wh-live-pip"></span>
+          Reserve your seat
+        </span>
+        <h3>Free. <span class="dim">Replay sent</span> after the live session.</h3>
+
+        <div class="reg-details">
+          <div class="reg-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span><strong>Wednesday, May 20, 2026</strong></span>
+          </div>
+          <div class="reg-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span><strong>11:00 AM ET</strong> (8 AM PT / 4 PM BST)</span>
+          </div>
+          <div class="reg-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14"/><rect x="1" y="6" width="14" height="12" rx="2" ry="2"/></svg>
+            <span><strong>60 minutes</strong> live + Q&amp;A</span>
+          </div>
+        </div>
+
+        <a href="https://events.teams.microsoft.com/event/5c7e8b69-c80a-4655-aebb-f47f6805a3d1@8e7cfb0a-b9b2-44a8-ba9f-bce2626fc430" target="_blank" class="reg-btn">
+          Register Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <p class="reg-note">Opens Microsoft Teams registration. Free to attend. Calendar invite sent immediately.</p>
+
+        <div class="reg-encore">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span><strong>EMEA Encore:</strong> Tue May 26, 9:00 AM ET (2 PM BST)</span>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </div>
 
-<!-- ════════════════════════════════════════════
-     SOX 302/404/906 REQUIREMENTS (light section)
-═════════════════════════════════════════════ -->
+<!-- ==============================
+     AGENDA
+============================== -->
 <div class="surface-paper">
   <div class="section-pad">
-    <div class="section-header-2col">
-      <div>
-        <div class="section-kicker k-sage">SOX Requirements</div>
-        <h2 class="section-h2 on-light">sections 302,<br><span class="dim">404 & 906</span></h2>
+    <div>
+      <div class="section-kicker k-violet">60 minutes - what we'll cover</div>
+      <h2 class="section-h2 on-light">Sixty minutes, <span class="dim">no filler.</span></h2>
+    </div>
+
+    <div class="agenda-list">
+      <div class="agenda-row">
+        <div class="ar-time">00:00 - 05:00</div>
+        <div><h4 class="ar-title">Why now, and why "Nerve Center"</h4></div>
+        <p class="ar-desc">A short read on where AI governance stands in 2026, why standing up a parallel platform for AI risk tends to be the wrong shape, and why we deliberately named this AI Nerve Center.</p>
+        <span class="ar-tag violet">CEO</span>
       </div>
-      <div>
-        <p style="font-size:17px;font-weight:300;color:var(--on-light-md);line-height:1.82;">SOX compliance spans multiple sections with distinct requirements. Section 302 demands CEO/CFO certification of financial reports. Section 404 requires management assessment and auditor attestation of internal controls over financial reporting. Section 906 imposes criminal penalties for false certifications. Uno covers every section with automated workflows, evidence collection, and continuous monitoring -- ensuring your certifications are backed by demonstrable control effectiveness.</p>
+      <div class="agenda-row">
+        <div class="ar-time">05:00 - 08:00</div>
+        <div><h4 class="ar-title">The 8 Gartner pillars, in 3 minutes</h4></div>
+        <p class="ar-desc">A lightning tour of what an AI Governance Platform needs to cover, mapped against AI Nerve Center's day-one capabilities.</p>
+        <span class="ar-tag violet">CTO</span>
+      </div>
+      <div class="agenda-row">
+        <div class="ar-time">08:00 - 35:00</div>
+        <div><h4 class="ar-title">Live tour: end-to-end</h4></div>
+        <p class="ar-desc">Engineers and the product team at uno.ai walk end-to-end through real workflows. Inventorying a new GenAI use case - auto-mapping it to EU AI Act, ISO 42001, NIST AI RMF - runtime policy enforcement on a live agent - evidence collection - audit-trail playback. Live in the actual product, on real use cases.</p>
+        <span class="ar-tag">Live demo</span>
+      </div>
+      <div class="agenda-row">
+        <div class="ar-time">35:00 - 45:00</div>
+        <div><h4 class="ar-title">Customer, partner, and expert panel</h4></div>
+        <p class="ar-desc">Customers, partners, and industry experts who have been instrumental in building AI Nerve Center share live use cases, case studies from their own programs, and pragmatic ways to approach AI governance based on what they have learned operating these programs.</p>
+        <span class="ar-tag amber">Panel</span>
+      </div>
+      <div class="agenda-row">
+        <div class="ar-time">45:00 - 60:00</div>
+        <div><h4 class="ar-title">Live Q&amp;A</h4></div>
+        <p class="ar-desc">Bring your hardest question. Tough ones get answered first. Anything we don't get to, we follow up on within 48 hours.</p>
+        <span class="ar-tag">Q&amp;A</span>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════
-     CAPABILITIES (dark section, numbered rows)
-═════════════════════════════════════════════ -->
+<!-- ==============================
+     SPEAKERS (dark)
+============================== -->
 <div class="surface-dark">
   <div class="section-pad">
-    <div class="section-header-2col">
-      <div>
-        <div class="section-kicker k-teal">Core Capabilities</div>
-        <h2 class="section-h2">automated<br><span class="dim">SOX lifecycle</span></h2>
-      </div>
-      <div>
-        <p style="font-size:17px;font-weight:300;color:var(--on-dark-md);line-height:1.82;">From scoping through remediation, Uno's AI agents handle the end-to-end SOX compliance lifecycle -- eliminating manual bottlenecks, reducing auditor friction, and keeping your program on schedule year-round.</p>
-      </div>
+    <div>
+      <div class="section-kicker k-teal">On stage</div>
+      <h2 class="section-h2">Speakers <span class="dim">who built this.</span></h2>
     </div>
 
-    <div class="cap-rows">
-      <div class="cap-row">
-        <span class="cap-num">01</span>
-        <span class="cap-title">ICFR Documentation</span>
-        <span class="cap-desc">Automatically generate and maintain process narratives, flowcharts, risk-control matrices, and control descriptions. AI keeps documentation current as processes evolve, eliminating the annual documentation scramble.</span>
-        <span class="cap-tag">Documentation</span>
+    <div class="speakers-grid">
+      <div class="speaker-card">
+        <div class="sp-avatar">ST</div>
+        <span class="sp-role">CEO &amp; Co-founder</span>
+        <h4 class="sp-name">Shashank Tiwari</h4>
+        <p class="sp-title">Uno - Co-founded 2021</p>
+        <p class="sp-bio">Built and scaled engineering at Nutanix, Medallia, Elementum, and StackRox before co-founding Uno. Has been talking to CISOs, CROs, and CAIOs for 18 months about where AI risk actually belongs in an enterprise risk program.</p>
       </div>
-      <div class="cap-row">
-        <span class="cap-num">02</span>
-        <span class="cap-title">Control Testing Automation</span>
-        <span class="cap-desc">Automate test of design and test of operating effectiveness for key controls. AI selects samples, evaluates evidence, identifies exceptions, and documents results -- reducing testing effort by 70% while improving coverage.</span>
-        <span class="cap-tag">Testing</span>
+      <div class="speaker-card">
+        <div class="sp-avatar">UEP</div>
+        <span class="sp-role">Engineering &amp; Product</span>
+        <h4 class="sp-name">Uno Engineering &amp; Product team</h4>
+        <p class="sp-title">Live tour drivers</p>
+        <p class="sp-bio">Engineers and product team at uno.ai will walk end-to-end through real workflows, from inventory to runtime policy enforcement to audit-trail playback. Demos run on a production tenant.</p>
       </div>
-      <div class="cap-row">
-        <span class="cap-num">03</span>
-        <span class="cap-title">Deficiency Tracking & Remediation</span>
-        <span class="cap-desc">Classify deficiencies as control deficiencies, significant deficiencies, or material weaknesses with AI-assisted severity assessment. Track remediation plans, assign owners, and monitor progress through resolution.</span>
-        <span class="cap-tag">Remediation</span>
-      </div>
-      <div class="cap-row">
-        <span class="cap-num">04</span>
-        <span class="cap-title">Management Assessment Support</span>
-        <span class="cap-desc">Streamline the Section 404 management assessment with automated evidence aggregation, control effectiveness scoring, and assessment report generation. Provide the documentation backbone for CEO/CFO certifications.</span>
-        <span class="cap-tag">Assessment</span>
-      </div>
-      <div class="cap-row">
-        <span class="cap-num">05</span>
-        <span class="cap-title">Auditor Collaboration Portal</span>
-        <span class="cap-desc">Give your external auditors a dedicated workspace with real-time access to test results, evidence packages, and control documentation. Reduce PBC list cycle times from weeks to days with organized, on-demand evidence delivery.</span>
-        <span class="cap-tag">Collaboration</span>
-      </div>
-      <div class="cap-row">
-        <span class="cap-num">06</span>
-        <span class="cap-title">SOX Program Management</span>
-        <span class="cap-desc">Manage the entire SOX program lifecycle -- scoping, risk assessment, control identification, testing schedules, and reporting -- from a unified dashboard. Track milestones, flag at-risk areas, and ensure nothing slips through the cracks.</span>
-        <span class="cap-tag">Program</span>
+      <div class="speaker-card">
+        <div class="sp-avatar">..</div>
+        <span class="sp-role">Customers, partners &amp; experts</span>
+        <h4 class="sp-name">Panelists TBC</h4>
+        <p class="sp-title">Voices from the field</p>
+        <p class="sp-bio">A panel of customers, partners, and industry experts who have been instrumental in shaping AI Nerve Center. They will share live use cases, case studies from their own programs, and pragmatic approaches to running AI governance at scale.</p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════
-     PROOF BAND
-═════════════════════════════════════════════ -->
-<div class="proof-band surface-dark2">
-  <div class="proof-inner">
-    <div class="proof-block">
-      <span class="proof-val">70<span class="a">%</span></span>
-      <span class="proof-label">Effort Reduction</span>
-      <span class="proof-desc">Compress SOX testing cycles from months to weeks with automated evidence collection and testing.</span>
-    </div>
-    <div class="proof-block">
-      <span class="proof-val">100<span class="sa">%</span></span>
-      <span class="proof-label">Control Coverage</span>
-      <span class="proof-desc">Complete ICFR coverage with no gaps in documentation, testing, or remediation tracking.</span>
-    </div>
-    <div class="proof-block">
-      <span class="proof-val">Zero<span class="a"> MW</span></span>
-      <span class="proof-label">Material Weaknesses</span>
-      <span class="proof-desc">Proactive deficiency detection and remediation before issues escalate to material weaknesses.</span>
-    </div>
-    <div class="proof-block">
-      <span class="proof-val">3<span class="sa">x</span></span>
-      <span class="proof-label">Faster Audits</span>
-      <span class="proof-desc">Accelerate external audit timelines with organized, on-demand evidence packages and auditor portals.</span>
-    </div>
-  </div>
-</div>
-
-<!-- ════════════════════════════════════════════
-     FEATURE GRID (dark)
-═════════════════════════════════════════════ -->
-<div class="surface-dark">
-  <div style="max-width:1360px;margin:0 auto;">
-    <div class="feat-grid">
-      <div class="feat-card">
-        <span class="feat-bar teal"></span>
-        <span class="feat-num">01</span>
-        <h3>Walkthrough Automation</h3>
-        <p>Automate process walkthroughs with AI that maps transaction flows, identifies control points, and generates walkthrough documentation. Eliminate the manual effort of interviewing process owners and drawing flowcharts.</p>
-      </div>
-      <div class="feat-card">
-        <span class="feat-bar sage"></span>
-        <span class="feat-num">02</span>
-        <h3>Test of Design</h3>
-        <p>Evaluate whether controls are properly designed to address financial reporting risks. AI analyzes control descriptions against risk assertions to identify design gaps before they become audit findings.</p>
-      </div>
-      <div class="feat-card">
-        <span class="feat-bar amber"></span>
-        <span class="feat-num">03</span>
-        <h3>Test of Effectiveness</h3>
-        <p>Automated operating effectiveness testing with intelligent sample selection, evidence evaluation, and exception identification. Continuous monitoring replaces point-in-time testing for real-time control assurance.</p>
-      </div>
-      <div class="feat-card">
-        <span class="feat-bar violet"></span>
-        <span class="feat-num">04</span>
-        <h3>Remediation Tracking</h3>
-        <p>Track every deficiency from identification through remediation with automated workflows, owner assignments, deadline management, and re-testing. Full audit trail of every action taken to address control gaps.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ════════════════════════════════════════════
-     FRAMEWORKS
-═════════════════════════════════════════════ -->
-<div class="surface-dark2">
+<!-- ==============================
+     WHAT YOU'LL SEE
+============================== -->
+<div class="surface-white">
   <div class="section-pad">
-    <div class="section-header-2col" style="margin-bottom:52px;">
+    <div class="see-grid">
       <div>
-        <div class="section-kicker k-teal">Framework Coverage</div>
-        <h2 class="section-h2">aligned with<br><span class="dim">audit standards</span></h2>
+        <div class="section-kicker k-violet">Live demo - what you'll see</div>
+        <h2 class="section-h2 on-light">From <span class="dim">"we have AI somewhere"</span> to a regulator-ready audit pack.</h2>
+        <div class="see-list" style="margin-top:32px">
+          <div class="see-item">
+            <div class="see-item-num">01</div>
+            <div>
+              <h4>Discover the AI you didn't know you had</h4>
+              <p>Live scan: production models, GenAI copilots, agents, MCP-connected tools, embedded-AI in your SaaS stack. Most teams find 3-5x more than their inventory shows.</p>
+            </div>
+          </div>
+          <div class="see-item">
+            <div class="see-item-num">02</div>
+            <div>
+              <h4>Auto-map to the frameworks that matter</h4>
+              <p>Same use case mapped to EU AI Act risk tiers, ISO 42001 controls, and NIST AI RMF functions, without touching a spreadsheet.</p>
+            </div>
+          </div>
+          <div class="see-item">
+            <div class="see-item-num">03</div>
+            <div>
+              <h4>Enforce policy at runtime</h4>
+              <p>Watch an agent get blocked, redacted, and routed to a human in real time, based on policy-as-code rather than a PDF.</p>
+            </div>
+          </div>
+          <div class="see-item">
+            <div class="see-item-num">04</div>
+            <div>
+              <h4>Replay an audit in 60 seconds</h4>
+              <p>Pull up any model and walk through every approval, every piece of evidence, and every signature in chronological order. The regulator-ready pack exports in one click.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <p style="font-size:17px;font-weight:300;color:var(--on-dark-md);line-height:1.82;">Uno maps SOX requirements to industry frameworks and auditing standards, ensuring your program meets both regulatory requirements and auditor expectations.</p>
-      </div>
-    </div>
-    <div class="fw-grid">
-      <div class="fw-col">
-        <span class="fw-col-label">SOX Sections</span>
-        <span class="fw-tag">Section 302 Certification</span>
-        <span class="fw-tag">Section 404(a) Management</span>
-        <span class="fw-tag">Section 404(b) Auditor</span>
-        <span class="fw-tag">Section 906 Criminal</span>
-      </div>
-      <div class="fw-col">
-        <span class="fw-col-label">Control Frameworks</span>
-        <span class="fw-tag">COSO 2013</span>
-        <span class="fw-tag">COBIT 2019</span>
-        <span class="fw-tag">ITGC Standards</span>
-        <span class="fw-tag">PCAOB AS 2201</span>
-      </div>
-      <div class="fw-col">
-        <span class="fw-col-label">Audit Standards</span>
-        <span class="fw-tag">PCAOB Standards</span>
-        <span class="fw-tag">AICPA Guidelines</span>
-        <span class="fw-tag">IIA Standards</span>
-        <span class="fw-tag">SEC Guidance</span>
+
+      <div class="see-mock">
+        <div class="see-mock-bar">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="label">AI Nerve Center - Live</span>
+        </div>
+        <div class="see-mock-body">
+          <div class="see-row"><div class="see-row-label"><span class="pip t"></span>customer-support-agent</div><div class="see-row-val ok">policy ok</div></div>
+          <div class="see-row"><div class="see-row-label"><span class="pip a"></span>credit-risk-model-v3.2</div><div class="see-row-val warn">drift +0.04&#963;</div></div>
+          <div class="see-row"><div class="see-row-label"><span class="pip v"></span>marketing-copy-copilot</div><div class="see-row-val ok">eu-act ok</div></div>
+          <div class="see-row"><div class="see-row-label"><span class="pip r"></span>research-agent</div><div class="see-row-val crit">blocked - external</div></div>
+          <div class="see-row"><div class="see-row-label"><span class="pip t"></span>clinical-triage-model</div><div class="see-row-val ok">audit ready</div></div>
+          <div class="see-row"><div class="see-row-label"><span class="pip a"></span>fraud-detection-v9</div><div class="see-row-val warn">review - 30d</div></div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════
-     QUOTE
-═════════════════════════════════════════════ -->
-<div class="surface-dark3">
-  <div class="quote-section">
-    <span class="quote-kicker">From Internal Audit Leadership</span>
-    <blockquote>
-      <strong>Our SOX program used to consume six months of effort every year.</strong> With Uno, we've compressed that to eight weeks. Deficiencies are caught early, documentation stays current, and our auditors actually look forward to working with us now.
-    </blockquote>
-    <div class="q-attr">
-      <span class="q-rule"></span>
-      <span class="q-who">VP of Internal Audit -- Public Technology Company</span>
+<!-- ==============================
+     FAQ
+============================== -->
+<div class="surface-paper">
+  <div class="section-pad">
+    <div>
+      <div class="section-kicker k-sage">FAQ</div>
+      <h2 class="section-h2 on-light">Quick <span class="dim">answers.</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Is the session free?</div>
+        <div class="faq-a">Yes. There is no cost to attend, and the replay is sent to all registrants whether or not you make it live.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I send a colleague the replay if I can't make it?</div>
+        <div class="faq-a">Yes. We'll email you a replay link the same afternoon. You're welcome to forward it. Anyone watching the replay can also book a follow-up demo through the link in that email.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">I'm in EMEA. Is there a session in a more convenient time zone?</div>
+        <div class="faq-a">Yes. We're running an EMEA-friendly encore on Tuesday, May 26 at 9:00 AM ET (2:00 PM BST / 3:00 PM CET). When you register here we'll offer the encore option in the confirmation.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How much of the session is product demo vs. talking heads?</div>
+        <div class="faq-a">Roughly 27 of the 60 minutes is live product demo on a real tenant, walking through inventory, risk, policy, evidence, and audit trail. The opening 8 minutes is context. The closing 15 is Q&amp;A. The 10-minute panel in the middle with customers, partners, and industry experts is a conversation rather than a slide deck.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need to be a current Uno customer to attend?</div>
+        <div class="faq-a">No. The session is open to anyone evaluating AI governance, building an AI risk program, or curious about an integrated-fabric approach. Many attendees come from teams who use other GRC platforms today.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Will there be a chance to ask questions privately?</div>
+        <div class="faq-a">Yes. The Q&amp;A panel takes both public questions and private ones routed only to our team. If you want a follow-up working session after the webinar, the post-event email will include a calendar link.</div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════
+<!-- ==============================
      CTA
-═════════════════════════════════════════════ -->
+============================== -->
 <div class="cta-section">
   <div class="cta-inner">
-    <span class="cta-kicker">Ready to simplify SOX?</span>
-    <h2>SOX,<br><span class="dim">simplified</span></h2>
+    <span class="cta-kicker">Can't wait for the webinar?</span>
+    <h2>get a<br><span class="dim">private demo</span></h2>
     <div class="cta-actions">
       <a href="https://share.hsforms.com/1UVlZRJVrTAuLMpcbB8SSSwqydzx" target="_blank" class="btn-solid-ink">
         Request a Demo
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="platform.html" class="btn-ghost-light">Explore the platform &#8594;</a>
+      <a href="ai-governance.html" class="btn-ghost-light">Explore AI Nerve Center &#8594;</a>
     </div>
     <div class="cta-trust">
-      <span>SOC 2 Type II Attested</span>
-      <span>ISO 27001 : 2022</span>
+      <span>All 8 Gartner Pillars</span>
+      <span>ISO 42001 Ready</span>
+      <span>EU AI Act Compliant</span>
       <span>Live in 2 weeks</span>
-      <span>No lock-in</span>
     </div>
   </div>
 </div>
 
-<!-- FOOTER -->
+<!-- ==============================
+     FOOTER
+============================== -->
 <footer class="site-footer">
   <div class="footer-top">
     <div class="footer-brand">
-      <a href="index.html" class="footer-logo-f">
-        UNO.AI
-      </a>
+      <a href="index.html" class="footer-logo-f">UNO.AI</a>
       <p>The world's most sophisticated AI-native GRC platform. Transforming how enterprises manage risk, ensure compliance, and build resilience.</p>
       <div class="footer-addr">655 Castro St. Suite 4<br>Mountain View, CA 94041, USA<br>contact@uno.ai</div>
       <div class="footer-social">
@@ -816,7 +875,7 @@ img{max-width:100%;height:auto}
       </div>
       <div class="footer-cert">
         <div class="footer-cert-icon privacy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg></div>
-        <div class="footer-cert-label"><strong>Data Privacy</strong>GDPR / CCPA Compliant</div>
+        <div class="footer-cert-label"><strong>Data Privacy</strong>GDPR - CCPA Compliant</div>
       </div>
       <div class="footer-cert">
         <div class="footer-cert-icon resilience"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
@@ -842,10 +901,13 @@ img{max-width:100%;height:auto}
 <!-- Scroll Top -->
 <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">&#8593;</button>
 
-<!-- SCRIPTS -->
+<!-- ==============================
+     SCRIPTS
+============================== -->
 <script>
 lucide.createIcons();
 
+// Scroll-triggered fade-ins
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -856,23 +918,31 @@ const io = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.07 });
 
-document.querySelectorAll('.cap-row,.feat-card,.proof-block,.fw-col,.section-header-2col,.ph-stats').forEach(el => {
+document.querySelectorAll('.agenda-row,.speaker-card,.see-item,.faq-item').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(18px)';
   el.style.transition = 'opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1)';
   io.observe(el);
 });
 
+// Scroll to top
 const scrollBtn = document.getElementById('scrollTopBtn');
 window.addEventListener('scroll', () => { scrollBtn.classList.toggle('visible', window.scrollY > 400); });
 scrollBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
+// Mobile nav
 const mobileNav = document.getElementById('mobileNav');
 const mobileToggle = document.querySelector('.mobile-nav-toggle');
 const mobileClose = document.querySelector('.mobile-nav-close button');
 if (mobileToggle) mobileToggle.addEventListener('click', () => mobileNav.classList.add('active'));
 if (mobileClose) mobileClose.addEventListener('click', () => mobileNav.classList.remove('active'));
 mobileNav.addEventListener('click', (e) => { if (e.target === mobileNav) mobileNav.classList.remove('active'); });
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+  const q = item.querySelector('.faq-q');
+  q.addEventListener('click', () => item.classList.toggle('open'));
+});
 </script>
 </body>
 </html>
