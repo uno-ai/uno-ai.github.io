@@ -4,6 +4,23 @@
    ═══════════════════════════════════════════════════════════ */
 
 /* ─── ANNOUNCEMENT STRIP — Deep navy ─── */
+.strip-wrap { position: relative; overflow: hidden; }
+.strip-wrap .strip {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.strip-wrap .strip.strip-out {
+  opacity: 0;
+  transform: translateY(-100%);
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.strip-wrap .strip.strip-in {
+  opacity: 1;
+  transform: translateY(0);
+  position: relative;
+  z-index: 1;
+}
 .strip {
   background: linear-gradient(135deg, #060d1a 0%, #0a1520 50%, #080f1e 100%) !important;
 }

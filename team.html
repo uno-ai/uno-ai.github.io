@@ -259,14 +259,14 @@ img{max-width:100%;height:auto}
       <span class="strip-cta">Read more <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
     </a>
   </div>
-  <div class="strip" id="strip-azure" style="display:none">
+  <div class="strip" id="strip-azure">
     <a href="https://share.hsforms.com/1UVlZRJVrTAuLMpcbB8SSSwqydzx" target="_blank">
       <span class="strip-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
       Buy Uno via Microsoft using your Azure Consumption Credits
       <span class="strip-cta">Learn how <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
     </a>
   </div>
-  <script>!function(){var s=document.getElementById('strip-anc'),a=document.getElementById('strip-azure');if(Math.random()<.5){s.style.display='none';a.style.display=''};}();</script>
+  <script>!function(){var strips=document.querySelectorAll('.strip-wrap .strip'),cur=0;if(strips.length<2)return;strips[0].classList.add('strip-in');strips[1].classList.add('strip-out');strips[1].style.display='';setInterval(function(){var nxt=(cur+1)%strips.length;strips[cur].classList.remove('strip-in');strips[cur].classList.add('strip-out');strips[nxt].classList.remove('strip-out');strips[nxt].classList.add('strip-in');cur=nxt;},5000);}();</script>
 </div>
 
 <!-- NAV -->
