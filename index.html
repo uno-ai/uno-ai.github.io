@@ -847,14 +847,14 @@ img { max-width: 100%; height: auto; }
 .q-who { font-family: 'DM Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--on-dark-dim); }
 
 .quotes-row {
-  display: grid; grid-template-columns: repeat(3,1fr); gap: 0;
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 0;
   border-top: 1px solid var(--rule-dark); margin-top: 80px;
 }
 .q-item {
   padding: 44px 44px 44px 0; border-right: 1px solid var(--rule-dark);
 }
-.q-item:nth-child(2) { padding-left: 44px; }
-.q-item:last-child { border-right: none; padding-right: 0; padding-left: 44px; }
+.q-item:nth-child(n+2) { padding-left: 44px; }
+.q-item:last-child { border-right: none; padding-right: 0; }
 
 .q-stars { display: flex; gap: 3px; font-size: 14px; color: var(--amber); margin-bottom: 18px; }
 .q-text { font-family: 'Instrument Serif', serif; font-size: 17.5px; font-style: italic; color: var(--on-dark-md); line-height: 1.55; letter-spacing: -0.01em; margin-bottom: 22px; }
@@ -1227,6 +1227,17 @@ img { max-width: 100%; height: auto; }
       </div>
     </div>
     <!-- Blog -->
+        <div class="nav-item">
+      <a href="banking-and-fintech.html">Industries <span class="nav-arrow">&#x25BC;</span></a>
+      <div class="nav-dropdown">
+        <a href="banking-and-fintech.html" class="nav-dropdown-item"><div class="dropdown-icon i-teal"><i data-lucide="landmark"></i></div><div><div class="dropdown-title">Banking &amp; Fintech</div><div class="dropdown-desc">GRC for financial institutions</div></div></a>
+        <a href="healthcare-and-life-sciences.html" class="nav-dropdown-item"><div class="dropdown-icon i-sage"><i data-lucide="heart-pulse"></i></div><div><div class="dropdown-title">Healthcare &amp; Life Sciences</div><div class="dropdown-desc">HIPAA, HITRUST &amp; clinical compliance</div></div></a>
+        <a href="higher-education.html" class="nav-dropdown-item"><div class="dropdown-icon i-amber"><i data-lucide="graduation-cap"></i></div><div><div class="dropdown-title">Higher Education</div><div class="dropdown-desc">FERPA, state &amp; federal compliance</div></div></a>
+        <a href="technology.html" class="nav-dropdown-item"><div class="dropdown-icon i-violet"><i data-lucide="cpu"></i></div><div><div class="dropdown-title">Technology</div><div class="dropdown-desc">SOC 2, ISO 27001 &amp; AI governance</div></div></a>
+        <a href="energy.html" class="nav-dropdown-item"><div class="dropdown-icon i-ink"><i data-lucide="flame"></i></div><div><div class="dropdown-title">Energy</div><div class="dropdown-desc">RRC, FERC &amp; EPA compliance</div></div></a>
+        <a href="federal-and-sled.html" class="nav-dropdown-item"><div class="dropdown-icon i-teal"><i data-lucide="building"></i></div><div><div class="dropdown-title">Federal &amp; SLED</div><div class="dropdown-desc">FedRAMP, FISMA &amp; state compliance</div></div></a>
+      </div>
+    </div>
     <div class="nav-item"><a href="https://blog.uno.ai/" target="_blank">Blog</a></div>
     <!-- Partners -->
     <div class="nav-item"><a href="partners.html">Partners</a></div>
@@ -1265,7 +1276,14 @@ img { max-width: 100%; height: auto; }
     <a href="third-party-risks.html">Third Party Risks</a>
     <a href="business-resilience.html">Business Resilience</a>
     <a href="ai-governance.html">AI Governance</a>
-    <div class="mobile-sub-label">More</div>
+        <div class="mobile-sub-label">Industries</div>
+    <a href="banking-and-fintech.html">Banking &amp; Fintech</a>
+    <a href="healthcare-and-life-sciences.html">Healthcare &amp; Life Sciences</a>
+    <a href="higher-education.html">Higher Education</a>
+    <a href="technology.html">Technology</a>
+    <a href="energy.html">Energy</a>
+    <a href="federal-and-sled.html">Federal &amp; SLED</a>
+<div class="mobile-sub-label">More</div>
     <a href="https://blog.uno.ai/" target="_blank">Blog</a>
     <a href="partners.html">Partners</a>
     <a href="contact.html">Contact</a>
@@ -1703,6 +1721,11 @@ img { max-width: 100%; height: auto; }
         <p class="q-text">"Partnering with Uno has been fantastic. Their AI-native platform lets us bring best-of-breed GRC to our clients at a speed and depth we simply couldn't achieve on our own."</p>
         <span class="q-who-sm">Managing Director - Global Advisory Partner</span>
       </div>
+      <div class="q-item">
+        <div class="q-stars">★★★★★</div>
+        <p class="q-text">"Working with Uno, I've seen firsthand the dedication Shashank and Muru have for their customers. They have partnered closely with us to build a success model driven by collaboration and continuous improvement. I am consistently impressed by their genuine curiosity regarding Bill's business and their commitment to helping us navigate our GRC journey on the Uno platform."</p>
+        <span class="q-who-sm">Candice Wold - Director, Information Security Risk Management - BILL</span>
+      </div>
     </div>
   </div>
 </div>
@@ -1783,10 +1806,13 @@ img { max-width: 100%; height: auto; }
       <div class="footer-col">
         <h4>Industries</h4>
         <ul>
-          <li><a href="banking-and-fintech.html">Banking & Fintech</a></li>
-          <li><a href="healthcare-and-life-sciences.html">Healthcare & Life Sciences</a></li>
-          <li><a href="fortune-2000.html">Fortune 2000</a></li>
-          <li><a href="managed-services.html">Managed Services</a></li>
+          
+          <li><a href="banking-and-fintech.html">Banking &amp; Fintech</a></li>
+          <li><a href="healthcare-and-life-sciences.html">Healthcare &amp; Life Sciences</a></li>
+          <li><a href="higher-education.html">Higher Education</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="energy.html">Energy</a></li>
+          <li><a href="federal-and-sled.html">Federal &amp; SLED</a></li>
         </ul>
       </div>
     </div>
